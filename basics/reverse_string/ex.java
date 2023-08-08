@@ -9,7 +9,7 @@ class ex {
         // Define an empty output string
         String outString = "";
 
-        // Iterate over the characters and add to the outstring
+        // Iterate over the characters and add to the outstring before
         for(int i = 0; i < input.length(); i++) {
             outString = input.charAt(i) + outString;
         }
