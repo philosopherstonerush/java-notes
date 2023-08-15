@@ -6,7 +6,9 @@ class Main {
         li.insert(1, 7);
         li.insert(2, 9);
         li.set(2, 10);
-        System.out.println(li.removeLast().value);
-        System.out.println(li.removeLast().value);
+        li.printList();
+        li.reverse();
+        li.printList();
+
     }
 }
