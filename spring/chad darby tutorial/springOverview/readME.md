@@ -112,6 +112,9 @@ Option-1
 Option-2
 1) `mvn spring-boot:run` 
 
+# Spring - injecting custom properities
+
+application.properities file could harbor new specifications or values that could be injected to the application with @value annotation
 
 # Warning 
 
