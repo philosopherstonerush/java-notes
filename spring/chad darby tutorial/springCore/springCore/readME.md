@@ -16,7 +16,7 @@ A bean is a standard java building block for your app. It is any class that does
 
 1) Implements the serializable interface
 2) No public constructor - ie.. zero arguments
-3) has properties that can be set/get - for example "foo" ---> "getFoo()"
+3) has properties that use set/get - for example "foo" ---> "getFoo()"
 
 # Okay so, is spring bean a java bean?
 
@@ -24,7 +24,7 @@ short answer: No
 
 long answer:
 
-1) Spring beans are objects managed by spring container.
+1) Spring beans are objects managed by spring container - inversion of control.
 2) They do not always implement the serializable interface
 3) They can have public non-zero constructors.
 
