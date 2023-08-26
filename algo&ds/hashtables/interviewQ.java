@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Optional;
 
 /**
- * Interview question involving hashmap example - compare two lists for common elements effectively by inserting it into a set or hashmap. It is kinda like how sieve of eratosthenes works.
+ * Interview question involving hashmap example - compare two lists for common elements effectively by inserting it into a dict or hashmap. It is kinda like how sieve of eratosthenes works.
  */
 
 public class interviewQ {
