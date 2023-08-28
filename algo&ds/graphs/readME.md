@@ -33,3 +33,47 @@ example:
 {
     "A" : ["B", "C"]
 }
+
+## Big Oh
+
+### Space Complexity
+
+Adjacency matrix - O(V^2)
+
+Since it requires a two dimensional array.
+
+Adjacency list = O(V + E)
+
+### Adding a vertex (not connecting edge)
+
+Adj Matrix - O(V^2)
+
+You would have to recreate the matrix every time a vertex is added to the graph.
+
+Adj List - O(1)
+
+Just append it to the end of the list.
+
+### Adding an edge 
+
+Adj Matrix - O(1)
+
+Adj List - O(1)
+
+### Removing an edge
+
+Adj Matrix - O(1) 
+
+Adj List - O(E)
+
+You would have to go through all edges to find the appropriate edge to remove.
+
+### Removing a vertex
+
+Adj Matrix - O(V^2)
+
+Adj List - O(V+E)
+
+### Better choice?
+
+Adj List is typically better compared to Adj Matrix.
