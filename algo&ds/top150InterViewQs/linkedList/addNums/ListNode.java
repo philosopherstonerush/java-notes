@@ -1,3 +1,8 @@
+
+/*
+Given definition
+ */
+
 public class ListNode {
     int val;
     ListNode next;

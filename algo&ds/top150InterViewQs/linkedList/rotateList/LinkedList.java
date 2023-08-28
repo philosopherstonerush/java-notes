@@ -1,3 +1,8 @@
+
+/*
+Given definition
+ */
+
 public class LinkedList {
     int val;
     LinkedList next;
