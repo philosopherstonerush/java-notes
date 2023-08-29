@@ -191,6 +191,8 @@ public class linkedList {
         tail = temp;
 
         for(int i = 0; i < length; i++) {
+
+            //imp to allocate after again 
             after = temp.next;
             temp.next = before;
             before = temp;
