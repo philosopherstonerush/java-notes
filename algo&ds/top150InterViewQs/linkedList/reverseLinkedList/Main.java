@@ -1,60 +1,57 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Main m = new Main();
+
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = null;
+
+        ListNode head = n1;
+
+        head = m.reverseBetween(head, 1, 2);
+
+        System.out.println("Done");
+
+
     }
 
     public ListNode reverseBetween(ListNode head, int left, int right) {
 
-        /*//
-                case-1 : only one node in the linked list
-
-                case-2: left == right
-
-                case-3: no nodes between left and right
-
-                case-4: one node, two nodes, three nodes and more than three
-         */
-
-
-
-
-        if(head == null) return head;
-        if(head.next == null) return head;
-        if(left == right) return head;
+        if(head == null || head.next == null) {
+            return null;
+        }
 
         ListNode tempL = head;
-        int diff = right - left;
+        ListNode tempR = null;
 
-        for(int i = 0; i < left - 2; i++) {
+        for(int i = 0; i < left; i++) {
             tempL = tempL.next;
         }
 
-        ListNode tempR = tempL;
+        tempR = tempL;
 
-        for(int i = 0; i < right - 1; i++) {
+        for(int i = left; i < right; i++) {
             tempR = tempR.next;
         }
 
-        ListNode before = tempL.next;
+        ListNode before = tempL;
         ListNode temp = before.next;
         ListNode after = temp.next;
 
-        if(diff == 1) {
-            temp.next = before;
-        }
-
-        for(int i = 0; i < diff; i++) {
+        while(temp != tempR.next) {
             after = temp.next;
             temp.next = before;
             before = temp;
             temp = after;
         }
-
-        ListNode end = tempL.next;
-        ListNode front = temp;
-        tempL.next = null;
-        tempL.next = front;
-        after.next = end;
 
         return head;
 
