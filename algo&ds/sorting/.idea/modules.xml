@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/inplace/inplace.iml" filepath="$PROJECT_DIR$/inplace/inplace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/out-of-place/out-of-place.iml" filepath="$PROJECT_DIR$/out-of-place/out-of-place.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sorting.iml" filepath="$PROJECT_DIR$/.idea/sorting.iml" />
+    </modules>
+  </component>
+</project>

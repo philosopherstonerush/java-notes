@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0352f4fc-8c19-4d92-a4b0-38c4bab7d0b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/bubbleSort/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/.idea/bubbleSort.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/bubbleSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/out/production/bubbleSort/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/out/production/bubbleSort/.idea/bubbleSort.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/out/production/bubbleSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/out/production/bubbleSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbleSort/out/production/bubbleSort/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/.idea/insertionSort.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/inSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/out/production/insertionSort/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/out/production/insertionSort/.idea/insertionSort.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/out/production/insertionSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/out/production/insertionSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insertionSort/out/production/insertionSort/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/.idea/selectionSort.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/out/production/selectionSort/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/out/production/selectionSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/out/production/selectionSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/out/production/selectionSort/.idea/selectionSort.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/out/production/selectionSort/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectionSort/selSort.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2UqeAIyt7yQUYl2PBthPEMTXDXR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out-of-place/mergeSort" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0352f4fc-8c19-4d92-a4b0-38c4bab7d0b6" name="Changes" comment="" />
+      <created>1693671396293</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693671396293</updated>
+    </task>
+    <servers />
+  </component>
+</project>
