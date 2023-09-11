@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb89a622-5544-4126-a937-7c2850450636" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/common/FootBallCoach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/common/swimCoach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/config/swimConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../linked_list/linkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../linked_list/linkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reverseLinkedList/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/reverseLinkedList/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/readME.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/readME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/common/Coach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/CricketCoach.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/common/CricketCoach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/coachController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/java/com/chad/tut/springCore/rest/coachController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/chad darby tutorial/springCore/springCore/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2V4sOmvRIKhnVBTMznwa2BH8zHK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/reverseNodesKataTime" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb89a622-5544-4126-a937-7c2850450636" name="Changes" comment="" />
+      <created>1694106656616</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694106656616</updated>
+    </task>
+    <servers />
+  </component>
+</project>

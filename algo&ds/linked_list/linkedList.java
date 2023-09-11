@@ -178,6 +178,8 @@ public class linkedList {
         return temp;
     }
 
+
+    // check out the algo in top150Interview questions - its way better.
     void reverse() {
         if(length == 0 || length == 1) {
             return;

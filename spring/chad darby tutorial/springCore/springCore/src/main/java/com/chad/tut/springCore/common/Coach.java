@@ -1,4 +1,4 @@
-package com.chad.tut.springCore;
+package com.chad.tut.springCore.common;
 
 // Upper level interface
 
