@@ -14,32 +14,45 @@ public class Main {
         n4.next = n5;
         n5.next = null;
 
-        ListNode head = removeNthFromEnd(n1, 3);
+        ListNode head = removeNthFromEnd(n1, 1);
 
         System.out.println("Done");
 
     }
 
+    /*
+        Feels nice to solve it in my first try.
+     */
     public static ListNode removeNthFromEnd(ListNode head, int n) {
 
-        ListNode nodes[] = new ListNode[n+1];
-        nodes[0] = head;
+        ListNode before = null;
+        ListNode currNode = head;
 
-        for(int i = 1; i < nodes.length; i++) {
-            nodes[i]= nodes[i-1].next;
+        // A gap is maintained so that when the forward node reaches the end, the currNode points to the Node that needs to be removed.
+        ListNode forward = head;
+        int gap = n - 1;
+
+        for(int i = 0; i < gap; i++) {
+            forward = forward.next;
         }
 
-
-
-        while(nodes[n].next != null) {
-            for(int i = 0; i < nodes.length; i++) {
-                nodes[i] = nodes[i].next;
-            }
+        while(forward.next != null) {
+            forward = forward.next;
+            before = currNode;
+            currNode= currNode.next;
         }
 
-        nodes[0].next = nodes[2];
-        nodes[1].next = null;
+        if(before !=null)
+        {
+            before.next = currNode.next;
+        } else {
+            // if before is null, then just remove the head
+            head = currNode.next;
+            currNode.next = null;
+            return head;
+        }
 
+        currNode.next = null;
         return head;
     }
 }
