@@ -2,6 +2,10 @@ import com.sun.source.tree.LiteralTree;
 
 import java.util.List;
 
+/*
+ * if there is duplicate values in nodes, for example, 1 and 4 here. Then remove all instances of such duplicates and return head with only 3 and 5.
+ */
+
 public class Main {
     public static void main(String args[]) {
         ListNode n1 = new ListNode(1);

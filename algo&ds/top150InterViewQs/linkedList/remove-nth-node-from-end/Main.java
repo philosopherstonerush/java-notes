@@ -1,5 +1,9 @@
 import java.util.List;
 
+/*
+ * It doesn't start with 0, rather the last node is indexed as 1.
+ */
+
 public class Main {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);

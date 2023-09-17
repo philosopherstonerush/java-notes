@@ -1,5 +1,9 @@
 import java.util.List;
 
+/*
+ * reverse linked list only between two indexes.
+ */
+
 public class Main {
     public static void main(String[] args) {
         Main m = new Main();

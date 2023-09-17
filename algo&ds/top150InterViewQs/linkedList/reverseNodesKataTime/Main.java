@@ -1,3 +1,8 @@
+
+/*
+ * reverse nodes k units at a time, for example if k = 3 then first 3 nodes then 3 nodes etc.
+ */
+
 public class Main {
     public static void main(String[] args) {
 
