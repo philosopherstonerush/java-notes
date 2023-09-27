@@ -1,3 +1,8 @@
+
+Note: Since the tutorial had two projects within one section I have combined them both here. Student is a basic introduction and employees is the whole done api endpoint example.
+
+The database script can be found under resources and the database configurations are made in the application.properities file. Similar to what I did under hibernate section.
+
 # JSON Data binding (Java POJO):
 
 Alias:
@@ -44,6 +49,21 @@ studentID is a path variable
 ```
 
 Annotate with @PathVaribale(<optional_endpoint_variable_name>) 
+
+# Request Body
+
+Annotation - @RequestBody 
+
+This converts the JSON input to the appropriate POJO class.
+
+```aidl
+\\ example
+@PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee theEmployee)
+```
+
+Make sure that the JSON key is same as the attribute names.
+
 
 # REST exception handling:
 
@@ -148,3 +168,34 @@ BAD CONVENTION - To create a new sensor
 CORRECT CONVENTION - Use POST to create new sensor
 POST - /sensors
 ```
+
+Example:
+
+```aidl
+POST ---> /employees ---> Create a new employee
+GET ---> /employees ---> Read a list of employees
+GET ---> /employees/{employeeId} ---> Read a single employee
+PUT ---> /employees/{employeeId} ---> Update an existing employee
+DELETE ---> /employees/{employeeId} ---> Delete an existing employee
+```
+
+# Service Layer
+
+- Service Facade design pattern.
+- Intermediate Layer for custom business logic
+- Integrate data from different sources.
+
+```aidl
+Employee Rest Controller could interact with an Employee Service that can poll results from Employee DAO, Skills DAO, Payroll DAO.
+
+```
+
+@Service - Does things similar to @Component but eventually in the future, new features could be released.
+
+## Best practice
+
+It is the service layer's responsibility to manage transactions. All @Transaction annotation on DAO methods must be replaced to service impl.
+
+Ideally, Service layer (Manager) represents your business logic and hence it should be annotated with @Transactional.
+
+Service layer may call different DAOs to perform DB operations. Lets assume a situation where you have 3 DAO operations in a service method. If your 1st DAO operation failed, other two may be still passed and you will end up with an inconsistent DB state. Annotating Service layer can save you from such situations.

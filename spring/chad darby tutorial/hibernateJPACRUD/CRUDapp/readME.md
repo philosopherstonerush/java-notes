@@ -105,6 +105,11 @@ It represents a class on runtime, and gives information about the class. Suppose
 If you have an object called student that is made off Student then you get the same result by executing
 `student.getClass()`
 
+## Methods defined in entity manager:
+
+- Merge --> if the object is found then it is updated, else it is inserted.
+  - Protip: Set the object's id to 0 to always save it as a new instance in the database.
+
 # JPQL
 
 JPA Query Language
