@@ -1,4 +1,4 @@
-package com.chad.crudApp.exampleCRUD.dao;
+package com.chad.crudApp.exampleCRUD.dao.oldHibernateWay;
 
 import com.chad.crudApp.exampleCRUD.entity.Employee;
 import com.chad.crudApp.exampleCRUD.service.EmployeeService;

@@ -1,10 +1,7 @@
 package com.chad.crudApp.exampleCRUD.rest;
 
-import com.chad.crudApp.exampleCRUD.dao.EmployeeDAO;
-import com.chad.crudApp.exampleCRUD.dao.EmployeeDAOImpl;
 import com.chad.crudApp.exampleCRUD.entity.Employee;
 import com.chad.crudApp.exampleCRUD.service.EmployeeService;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

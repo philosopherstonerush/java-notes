@@ -199,3 +199,72 @@ It is the service layer's responsibility to manage transactions. All @Transactio
 Ideally, Service layer (Manager) represents your business logic and hence it should be annotated with @Transactional.
 
 Service layer may call different DAOs to perform DB operations. Lets assume a situation where you have 3 DAO operations in a service method. If your 1st DAO operation failed, other two may be still passed and you will end up with an inconsistent DB state. Annotating Service layer can save you from such situations.
+
+# Jpa Repository:
+
+It is an interface provided that can be used to perfom database actions. It container a lot of predefined methods and supports transaction out of the box! So we don't have to enter @Transaction manually.
+
+# Spring Data REST:
+
+This maven dependency scans your project and finds the appropriate entities and gives you the REST code for them without you having to code them out like I have done in this project (DAO - SERVICE - REST, after this dependency, you just need the DAO with Jpa Respository).
+
+You could set the base api route for auto generated endpoints in your application.properities file.
+
+## Convention:
+The REST url is created with the plural form of the entity class name and also the first character converted to lower case.
+
+Example:
+```aidl
+Employee ---> Entity class
+
+\employees ---> REST endpoint created.
+```
+
+Do not send id in the JSON body!! These auto generated endpoints ignore them and only take Id from the url.
+
+```aidl
+spring.data.rest.base-path = /restApi
+```
+
+## HATEOAS Format (Hypertext as the Engine of Application State):
+
+When the auto generated REST services are accessed then they reply in a format that is HATEOAS compliant.
+
+## Configuration:
+
+Since by default spring, pluralizes the entity name, it might be helpful for the cases like goose etc and what if you want a completely new name? 
+
+All you have to do is annotate the Respository with 
+
+```aidl
+@RespositoryRestResource(path="<your-custom-name>")
+```
+
+
+## Features
+
+This also exposes a lot of pre-defined features like pagination, sorting etc.
+
+### Pagination:
+
+By default, the generated api only returns 20 results and rest can be accessed by increasing the page number.
+
+```aidl
+bot\employees?page=0 ---> ?page=1
+```
+
+To change the default page size go to application.properities and then
+
+```aidl
+spring.data.rest.default-page-size= <new-page-size>
+```
+
+### Sorting
+
+You can sort the entity data by their attributes (default - ascending)
+
+```aidl
+
+for descending
+\employees?sort=firstName,desc
+```
