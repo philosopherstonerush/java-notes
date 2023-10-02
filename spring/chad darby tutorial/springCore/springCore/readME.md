@@ -21,7 +21,11 @@ A bean is a standard java building block for your app. It is any class that does
 2) No public constructor - ie.. zero arguments
 3) has properties that use set/get - for example "foo" ---> "getFoo()"
 
+## Spring Bean
+
 In spring, a bean is how you initialize a third party client to work with spring container. A third party class would not be specified with @Component, how to make it availiable to the container? User @Configuration and @Bean - refer swimCoach.
+
+@Bean annotation is used on methods to specify that the object returned by the method is a bean to be managed by spring context. It is usually declared in @Configuration classes.
 
 # Okay so, is spring bean a java bean?
 
