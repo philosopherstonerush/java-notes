@@ -104,6 +104,10 @@ Internally when spring stores roles associated with a specific user, it adds a p
 INSERT INTO 'AUTHORITIES' VALUES ('john', 'ROLE_EMPLOYEE')
 ```
 
+#### Custom Tables:
+
+You do not have to use the default table schema present above.
+
 
 ## Spring Security Password Storage:
 
@@ -124,8 +128,36 @@ encodedPassword = test123
 
 Spring Security Team Recommendation: bcrypt algo
 
+```java
+{bcrypt}<hashvalue>
+```
+
 - Performs one way encrypted hashing
 - Adds a random salt to the password for additional protection.
+
+Passwords are stored with information about the type of algorithm used to derive them in the database
+
+![img.png](notes/img.png)
+
+### JDBC
+
+The current implementation you see under security is how you do it with low level JDBC code.
+
+- Initialize JdbcUserDetailsManager 
+- setUsersByUserNameQuery() method is invoked to get user details with the sql query being spent to it as argument.
+- setAuthoritiesByUserNameQuery() method is invoked to get role details with the sql query being spent to it as argument.
+
+it is important to define `WHERE` clause which looks up the username you send in the database table. 
+
+example:
+
+```roomsql
+select * from members where user_id = ?
+```
+
+### Hibernate/ JPA - Use DAO 
+
+[Hibernate example](notes/hibernate-spring-security.pdf)
 
 ### What the fuck is salt?
 

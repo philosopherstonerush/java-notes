@@ -53,11 +53,30 @@ public class employeeSecurityConfig {
     }
      */
 
+    // default spring security user table
+    /**
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
+        //Datasource is used to get the connection object of our JDBC vendor.
 
         // Spring security automatically looks for our default schema table.
         return new JdbcUserDetailsManager(dataSource);
+    }
+    */
+
+    // custom table
+    @Bean
+    public UserDetailsManager userDetailsManager(DataSource dataSource) {
+        //Datasource is used to get the connection object of our JDBC vendor.
+
+        // Spring security automatically looks for our default schema table.
+        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+
+        jdbcUserDetailsManager.setUsersByUsernameQuery("select user_id, pw, active from members where user_id = ?");
+
+        jdbcUserDetailsManager.setAuthoritiesByUsernameQuery("select user_id, role from roles where user_id = ?");
+
+        return jdbcUserDetailsManager;
     }
 
     @Bean
