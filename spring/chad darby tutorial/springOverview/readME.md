@@ -19,6 +19,7 @@ Go to spring initializer website and select the options you want and then downlo
 # infrastructure
 
 - AOP (aspect oriented programming)
+  - mentioned in depth in CRUD_API project.
 - Aspects (makes certain features available to the entire app)
 - Instrumentation
 - Messaging
@@ -29,6 +30,7 @@ Go to spring initializer website and select the options you want and then downlo
 - ORM (object relational mapper) (lets you hook up with JDBC and hibernate)
 - Transactions
 - OXM
+  - The OXM module provides an abstraction layer that supports Object/XML mapping implementations for JAXB, Castor, XMLBeans, JiBX and XStream.
 - JMS (java message service) (Helps to send async messages to the message broker)
 
 # Web layer
@@ -36,6 +38,7 @@ Go to spring initializer website and select the options you want and then downlo
 - Servlet
 - websocket
 - web
+  - The Web module provides basic web-oriented integration features such as multipart file-upload functionality and the initialization of the IoC container using servlet listeners and a web-oriented application context.
 
 # Test layer
 

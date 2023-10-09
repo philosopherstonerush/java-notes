@@ -72,15 +72,15 @@ Process:
 
 A simple pojo to carry our json error message back.
 
-3) Create a custom exception class.
+2) Create a custom exception class.
 
 Custom Error Handling, inherit RuntimeException class and then call super constructors
 
-4) Update the REST service to throw exception if student not found.
+3) Update the REST service to throw exception if student not found.
 
 Create a new student exception class if errorsome situation arises. 
 
-5) Add an exception handler using @ExceptionHandler
+4) Add an exception handler using @ExceptionHandler
 
 ```java
 // syntax:
