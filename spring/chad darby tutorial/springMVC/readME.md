@@ -92,6 +92,50 @@ Used in forms to direct where to send input parameters
 
 #### thymeleaf read request data
 
-1) Read through param object - see greetingController
+1) Read through param object - see greetingController.
 2) Read through HttpServletRequest - see greetingsController.
+3) Read through @RequestParam - see greetingsControllerV3.
+
+#### sending data 
+
+When to use get and post?
+
+| Get                        | Post                                           |
+|----------------------------|------------------------------------------------|
+| Good for debugging         | Can't be bookmarked or email URL               |
+| Bookmark url or email url  | No limitations on data length                  |
+| Limitations on data Length | Can also send binary data - pics, audio, video |
+
+@RequestMapping can be used to target different request types like GET, POST, PUT etc
+
+It then rejects any other request unless its the one specified.
+
+```java
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@RequestMapping(value = "/", method = RequestMethod.GET) // or .PUT etc
+
+```
+
+The above line can further be simplified into
+
+```java
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+@GetMapping("/")
+
+@PostMapping("/thisIsFun")
+
+@PutMapping("/update!")
+
+//etc
+
+```
+
+
 
