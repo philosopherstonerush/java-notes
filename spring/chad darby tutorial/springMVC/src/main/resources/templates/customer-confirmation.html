@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Confirmed!</title>
+</head>
+<body>
+
+    <p>
+        Customer's FirstName: <span th:text="${customer.firstName}"></span> <br>
+        Customer's lastName: <span th:text="${customer.lastName}"></span>
+    </p>
+
+    <p>
+        Customer's age is given as
+
+        <span th:text="${customer.age}"></span>
+    </p>
+
+    <p>
+        Customer's postalCode is given as:
+        <span th:text="${customer.postalCode}"></span>
+    </p>
+
+</body>
+</html>

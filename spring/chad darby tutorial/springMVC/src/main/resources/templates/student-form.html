@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student form</title>
+</head>
+<body>
+
+<form th:action="@{\processStudentForm}" th:object="${student}" method="post">
+
+    <!-- Whatever you type here, becomes its value. -->
+    <input type="text" th:field="*{firstName}">
+    <input type="text" th:field="*{lastName}">
+
+<!--     Whatever you select, the value tag gives its value to the field.-->
+<!--     hardcoded value-->
+    <select th:field="*{country}">
+        <option th:value="Brazil">
+            Brazil
+        </option>
+        <option th:value="India">
+            India
+        </option>
+    </select>
+
+<!--    select that takes values from application.properities-->
+    <select th:field="*{country}">
+        <option th:each="tempCountry: ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+    </select>
+
+<!--    radio button for languages -->
+    <input type="radio" th:field="*{language}" th:each="lang: ${languages}" th:value="${lang}" th:text="${lang}">
+
+<!--    checkboxes for systems -->
+    <input type="checkbox" th:field="*{systems}" th:each="sys: ${systems}" th:value="${sys}" th:text="${sys}">
+
+    <!--    send the info to the URL.-->
+    <input type="submit">
+</form>
+
+</body>
+</html>

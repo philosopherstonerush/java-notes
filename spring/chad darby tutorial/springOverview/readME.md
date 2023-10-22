@@ -9,6 +9,8 @@ Maven is a project build tool, that will automatically take care of all your dep
 
 Go to spring initializer website and select the options you want and then download the file. Open it with intellj to automatically install the dependencies.
 
+To see what the pom.xml file looks like, you can select the explore button to see the preview of it. If you just want to add the dependencies to your existing file, then you can add this way.
+
 # Spring core
 
 - beans

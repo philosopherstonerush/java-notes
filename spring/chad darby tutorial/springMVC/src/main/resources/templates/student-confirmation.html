@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student confirm</title>
+</head>
+<body>
+
+<span th:text="'firstName: ' + ${student.firstName} + 'and' +  'lastName: ' + ${student.lastName}">
+</span>
+<br>
+<br>
+<span th:text="'Country: ' + ${student.country}"></span>
+
+<br>
+<br>
+
+<span th:text="'programming languages is ' + ${student.language}"></span>
+
+<ul>
+   <li th:each="sys: ${student.systems}" th:text="${sys}"></li>
+</ul>
+
+
+</body>
+</html>

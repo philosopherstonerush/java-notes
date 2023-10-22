@@ -19,7 +19,7 @@ Or if you use CDN, then directly link them to your thymleaf templates.
 
 Front Controller aka DispatcherServlet that is provided by spring team that maps requests to their appropriate controllers.
 
-### Controller 
+### Controller
 
 It is important for controller classes to be annotated with @Controller.
 
@@ -30,7 +30,20 @@ It containes the business logic
 
 Finally, send it to the appropriate view template. 
 
+#### @Value - annotation
+
+It is used to extract values from the application.properities file. 
+
+example: 
+
+```java
+@Value("${countries}")
+private List<string> countries;
+```
+
 ### Model
+
+#### Add data to Spring MVC model
 
 They are used to dynamically insert values into the thymeleaf template.
 
@@ -63,10 +76,12 @@ public String showProcessedForm() {
 
 Html templates
 
+`${<variable-name>}` is used to extract value
+
 #### Thymeleaf tags
 
 ##### th:text
-```
+```html
 
 <p th:text="'this is awesome' + ${variable-insertion}"/>
 
@@ -88,6 +103,43 @@ Used in forms to direct where to send input parameters
 <form th:action="@{/processForm}">
     
 </form>
+```
+
+##### th:value
+
+Used to set value to the specific post request. Useful with forms.
+
+**IMPORTANT** 
+
+if the value has space then it must be placed within single quotes
+
+```html
+
+<input type="text" th:value="'Microsoft Windows'"> 
+
+```
+
+```html
+
+<form>
+    <select>
+        <option th:value="brazil">
+            Brazil
+        </option>
+    </select>
+</form>
+```
+
+##### th:each
+
+Creates an element multiple times.
+
+```html
+
+<form>
+    <option th:each="country: ${countries}" th:value="${country}"></option>
+</form>
+
 ```
 
 #### thymeleaf read request data
@@ -137,5 +189,94 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 ```
 
+#### Data Binding through Custom model - form data binding
 
+see studentController example.
+
+##### Tips 
+
+`*{...}` is shortcut for `${student.firstName}`
+
+## Spring MVC validation
+
+Check out customer model, controllers for validation performance.
+
+### dependency 
+
+make sure to have "spring-boot-starter-validation" dependency
+
+### Validation Annotations
+
+- @NotNull - checks that the annotated value is not null. Basically a "required" tag to a field.
+- @Min - must be a number >= value.
+- @Max - must be a number <= value.
+- @Size - size must match the given size.
+- @Pattern - must match the given regular expression.
+- @Future/@Past - Dates must be in the future or in the past.
+
+### Steps involved:
+
+1) Create a POJO with respect to the form - like customer form.
+2) Insert the appropriate validation annotations corresponding to each field of the POJO.
+3) Controller - Make sure to have 
+   1) @Valid which triggers the validation to take place in the parameter
+   2) BindingResult - class that indicates if there has been any error with respect to the validation.
+   3) @ModelAttribute - Helps to retrieve information about the specific model that was added to the view.
+
+### Filtering Controller Data:
+
+(see customer controller class)
+
+`@InitBinder` - it is used to pre-process every data that goes through our system. 
+
+The method annotated with `@InitBuilder` must have a parameter called `WebDataBinder` which then invokes `registerCustomEditor()`(<data class type to be preprocessed>, <what is used to preprocess those data types with)
+
+#### beans.propertyeditors
+
+These are the editors to change the properities of your model attributes.
+
+`StringTrimmerEditor` is a property editor that trims down extra white spaces in the value when we submit forms.
+
+### Ranges
+
+You could have two @Min and @Max validation annotation to specify a range.
+
+### Regular Expressions
+
+@Pattern(regex=<pattern>)
+
+The string is matched with the above expression as a way to validate input.
+
+### message.properities file
+
+You can create a message.properities file to have your messages to be displayed if there is a specific exception.
+
+For example, if you provide a string to integer field.
+
+Some constraints:
+   - this file has to be named "messages.properties".
+   - this file has to be placed under resources.
+
+### BindingResult 
+
+You can print out the bindingResult using .toString() or inspect it in the debugger to find a wealth of information about offending fields during validation, they also reveal a field called `codes` that you can use in messages.properties file.
+
+### Custom annotation - Create your own @!
+
+see customer promoCode annotation - under validation folder
+
+Process:
+1) Create an interface with special annotation specific interface called `@interface`.
+2) Add other relevant annotations on top of this interface, like
+   1) @Constraint - Actual Implementation of our interface that would validate our field or execute business logic.
+   2) @Target - Where do you want to apply this annotation?
+      1) ElementType.METHOD - can be applied to methods
+      2) ElementType.FIELD - can be applied to fields.
+   3) @Retention - used to signify how long you want this to be present in the bytecode.
+      1) RetentionPolicy.RUNTIME
+3) 
+
+### WATCHOUT - Required validation for Integer fields
+
+If you use @NotNull for integer fields then make sure to use `Integer` instead of `int` or else you would get `unable to convert string to int primitive type`.
 
