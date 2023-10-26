@@ -1,5 +1,6 @@
 package com.chad.thymeleaf.learnThymeLeaf.model;
 
+import com.chad.thymeleaf.learnThymeLeaf.validation.promoCode;
 import jakarta.validation.constraints.*;
 
 public class customer {
@@ -21,8 +22,20 @@ public class customer {
     @Pattern(regexp="^[0-9]{5}", message = "input only 5 digits")
     private String postalCode;
 
+    // you can send in value and message to override the default.
+    @promoCode
+    private String promo;
+
     public customer() {
 
+    }
+
+    public String getPromo() {
+        return promo;
+    }
+
+    public void setPromo(String promo) {
+        this.promo = promo;
     }
 
     public String getPostalCode() {

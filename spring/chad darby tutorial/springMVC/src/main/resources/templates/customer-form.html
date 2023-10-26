@@ -12,10 +12,12 @@
 
 <form th:action="@{\process-form}" th:object="${customer}" method="post">
 
+    <p>First Name: </p>
     <input type="text" th:field="*{firstName}">
 
     <br><br>
 
+    <p>Last Name: </p>
     <input type="text" th:field="*{lastName}">
 
     <span th:if="${#fields.hasErrors('lastName')}"
@@ -24,6 +26,7 @@
 
     <br><br>
 
+    <p>Age: </p>
     <input type="text" th:field="*{age}">
 
     <span th:if="${#fields.hasErrors('age')}"
@@ -33,11 +36,20 @@
 
     <br><br>
 
+    <p>Postal Code: </p>
     <input type="text" th:field="*{postalCode}">
     <span th:if="${#fields.hasErrors('postalCode')}"
           th:errors = "*{postalCode}"
           class = "error"
     ></span>
+
+    <br><br>
+
+    <p>Promo: </p>
+    <input type="text" th:field="*{promo}">
+    <span th:if="${#fields.hasErrors('promo')}"
+          th:errors="*{promo}"
+          class="error"></span>
 
     <input type="submit">
 

@@ -25,5 +25,5 @@ public @interface promoCode {
 
     // This can be used to provide additional information regarding our error
     // again only using the default
-    public Class<? extends Payload>[] payloads() default {};
+    public Class<? extends Payload>[] payload() default {};
 }

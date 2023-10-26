@@ -48,6 +48,14 @@ studentID is a path variable
 
 ```
 
+You can also append data to the end of your url like
+```java
+
+{@/employees/show-form-update(employeeId=${tempEmployee.id})}
+
+employeeId gets appended to the end of the url.
+```
+
 Annotate with @PathVaribale(<optional_endpoint_variable_name>) 
 
 # Request Body
@@ -202,7 +210,19 @@ Service layer may call different DAOs to perform DB operations. Lets assume a si
 
 # Jpa Repository:
 
-It is an interface provided that can be used to perfom database actions. It container a lot of predefined methods and supports transaction out of the box! So we don't have to enter @Transaction manually.
+It is an interface provided that can be used to perfom database actions. It contains a lot of predefined methods and supports transaction out of the box! So we don't have to enter @Transaction manually.
+
+Custom methods - methods of your own:
+1) Write raw sql queries yourself ---> @Query(value=<sql>)
+2) The method names are parsed to create queries for you automatically.
+
+```java
+
+public List<Employee> findAllByOrderByLastNameAsc();
+
+// retrieves all employees and then orders them by last name
+
+```
 
 # Spring Data REST:
 
