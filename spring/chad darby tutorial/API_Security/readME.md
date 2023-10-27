@@ -1,3 +1,6 @@
+
+Check out Spring MVC Security as well.
+
 # Spring Security:
 
 - Implemented using servlet filters in the background.
@@ -26,7 +29,7 @@ The project files are similar to CRUD API tutorial - please refer to that for CR
 
 ## Authorization and Authentication
 
-- Authentication checks if the user can see the protected web resource.
+- Authentication checks if the user can see the protected web resource - meaning they have their username and password in the database.
 
 - Authorization says if the user is cleared (meaning they have a role) that can actually use the web resource.
 

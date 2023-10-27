@@ -64,9 +64,12 @@ public class EmployeeController {
 
 	}
 
-	@PostMapping("/delete")
+	// Why not Post? Because we are only accessing this URL through an <a> tag and not through a form, if form then Post mapping is used.
+	@GetMapping("/delete")
 	public String deleteEmployees(@RequestParam("employeeId") int theId) {
+
 		theEmployeService.deleteById(theId);
+
 		return "redirect:/employees/list";
 	}
 }

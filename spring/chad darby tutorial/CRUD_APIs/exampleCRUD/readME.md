@@ -187,6 +187,12 @@ PUT ---> /employees/{employeeId} ---> Update an existing employee
 DELETE ---> /employees/{employeeId} ---> Delete an existing employee
 ```
 
+## When you use GET VS POST:
+
+GET is used when you enter an URL through an `<a>` tag, or any way where you would visit it through typing on the addressbar.
+
+POST is used when you send something through a **form**.
+
 # Service Layer
 
 - Service Facade design pattern.
