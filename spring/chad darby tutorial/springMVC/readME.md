@@ -222,6 +222,7 @@ make sure to have "spring-boot-starter-validation" dependency
    1) @Valid which triggers the validation to take place in the parameter
    2) BindingResult - class that indicates if there has been any error with respect to the validation.
    3) @ModelAttribute - Helps to retrieve information about the specific model that was added to the view.
+        IMP: You would have to specify the model name in your method parameter if the model name is not similar to the class name it points to. Refer customer controller and student controller
 
 ### Filtering Controller Data:
 

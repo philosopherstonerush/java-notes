@@ -32,6 +32,8 @@ public class customerController {
 
     @RequestMapping(value = "/process-form", method = RequestMethod.POST)
     public String processCustomerForm(
+        
+    // We dont need a @ModelAttribute here because the model name is same as the classname 
             @Valid customer theCustomer,
             BindingResult bindingResult
     ) {

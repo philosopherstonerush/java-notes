@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer login</title>
+</head>
+<body>
+
+    <h3>
+        Register
+    </h3>
+
+    <span th:if="${param.error}">
+        Invalid Username / Password.
+    </span>
+
+    <form th:action = "@{/process-login}"
+          method = "POST"
+    >
+        User name:
+        <input type="text" name="username">
+        Password:
+        <input type="password" name="password">
+
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>
