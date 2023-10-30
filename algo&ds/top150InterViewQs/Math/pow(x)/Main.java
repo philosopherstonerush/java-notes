@@ -9,7 +9,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(myPow(7, 11));
+        System.out.println(myPow(2.00000, -2147483648));
     }
 
 
@@ -23,7 +23,8 @@ public class Main {
         // Integer min value is -2147483648 and max value is 2147483647
         // If you did abs on min value then it wont become a postiive value as it exceeds that range.
         // That is why we store it in long
-        long N = Math.abs(n);
+        long N = n;
+        N = Math.abs(N);
 
         double pow = 1;
 

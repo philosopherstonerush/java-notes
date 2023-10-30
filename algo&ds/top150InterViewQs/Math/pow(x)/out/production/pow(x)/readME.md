@@ -65,10 +65,13 @@ then using BINARY EXPONENTIATION 7^11 can be split as
 
 then,
 
-7^8 (skip) 7^2 7^1
+7^8 (skip) 7^2 7^1 [skip if 0]
 
 Multiple all of those,
 
->
+> 1.977326743E9
+
+we need n & 1 to only multiple when 1 comes
+we need x *= x to increase the exponent to the next 2^n 
 
 ```
