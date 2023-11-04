@@ -294,3 +294,8 @@ You can sort the entity data by their attributes (default - ascending)
 for descending
 \employees?sort=firstName,desc
 ```
+
+# To render the error pages - according to specific exception
+
+To do that you would have to make a custom Error Controller.
+Please refer to obsidian for it

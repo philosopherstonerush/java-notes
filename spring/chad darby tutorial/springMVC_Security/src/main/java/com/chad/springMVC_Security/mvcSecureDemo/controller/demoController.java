@@ -14,7 +14,28 @@ public class demoController {
     // the path must match up with the one specified in security config
     @GetMapping("/login")
     public String getLogin() {
-        return "login";
+        return "fancy-login";
+    }
+
+    // /leaders --> for managers
+
+    @GetMapping("/leaders")
+    public String getLeadersPage() {
+        return "leaders";
+    }
+
+    // /admin --> for admins
+
+    @GetMapping("/admin")
+    public String getAdminPage() {
+        return "admin";
+    }
+
+    // AccessDenied Page
+
+    @GetMapping("/accessDenied")
+    public String getAccessDenied() {
+        return "accessdenied";
     }
 
 }

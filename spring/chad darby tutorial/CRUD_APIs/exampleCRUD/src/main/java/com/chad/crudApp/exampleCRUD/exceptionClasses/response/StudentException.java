@@ -1,6 +1,6 @@
 package com.chad.crudApp.exampleCRUD.exceptionClasses.response;
 
-// auto-generated with IDE
+// auto-generated with IDE, right-click and generate
 public class StudentException extends RuntimeException{
     public StudentException(String message) {
         super(message);

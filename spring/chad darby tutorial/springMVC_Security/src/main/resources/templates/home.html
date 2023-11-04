@@ -8,5 +8,28 @@
     <h1>
         I hope this really helps me out in the future
     </h1>
+
+    <form th:action="@{/logout}" action="#" method="POST">
+        <input type="submit" value="Logout">
+    </form>
+    <br> <br>
+    <div>
+        User: <span sec:authentication="principal.username"></span>
+        <br>
+        Roles: <span sec:authentication="principal.authorities"></span>
+    </div>
+
+<!--    leaders - only for managers-->
+
+    <div sec:authorize="hasRole('MANAGER')">
+        <a th:href = "@{/leaders}"> Go To Leaders! </a>
+    </div>
+
+<!--    admin - only for admins -->
+
+    <div sec:authorize="hasRole('ADMIN')">
+        <a th:href = "@{/admin}"> Go To Admin! </a>
+    </div>
+
 </body>
 </html>
