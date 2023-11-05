@@ -42,7 +42,11 @@ public class demoSecurityConfig {
 
      */
 
-    // This authenticates the user if you happen to use the default database schema
+    // This authenticates the user if you happen to use the default database schema - SQL
+    // make sure to indicate the type of encryption used along with the password when adding users
+    // {bcrypt}asdasalsfknasfaag
+    // because we wouldnt have to add any password encoder for that to happen and would only have to indicate it here.
+
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);

@@ -111,6 +111,42 @@ INSERT INTO 'AUTHORITIES' VALUES ('john', 'ROLE_EMPLOYEE')
 
 You do not have to use the default table schema present above.
 
+Steps to add your own ways to retrieve User information from the database without having to worry too much about spring boot auto authentication
+
+1) Implement the `UserDetails` interface that spring boot has and override the loadByUsername method with your own DAO class that loads the appropriate user by their username.
+
+2) Make sure to set authenticationManager to the implementation of userDetails and also the type of password encoder
+
+```java
+
+@Resource
+private MongoUserDetails mongoUserDetails;
+
+@Bean
+public DaoAuthenticationProvider authenticationProvider() {
+    DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+    authenticationProvider.setPasswordEncoder(passwordEncoder());
+    authenticationProvider.setUserDetailsService(mongoUserDetails);
+    return authenticationProvider;
+}
+
+@Bean
+public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+}
+
+```
+
+@Resource is the annotation that will help to extract beans from the container. In the above example, it just creates a new one I reckon.
+
+```java
+
+ // Ask the container to get the bean and 'put' it here (inject)
+@Resource(name = "userFile")
+private File userFile;
+
+```
+
 
 ## Spring Security Password Storage:
 
@@ -179,6 +215,10 @@ To find exact usage, please refer to - employeeSecurityConfig
 requestMatchers("url").hasRole("ROLE")
 
 url can be "/api/**" - which means all sub domains or "/api" which only points to that specific one.
+
+# Registering Users
+
+Create a userService to insert new users into the database. Nothing fancy. 
 
 ## Watch-Out!:
 
