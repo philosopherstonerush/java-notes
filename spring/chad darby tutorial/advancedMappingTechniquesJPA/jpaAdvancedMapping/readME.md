@@ -36,7 +36,56 @@ CascadeTypes can be
 - REFRESH -> rereads the value of an instance from the database, propagates this action to the child entity as well.
 - DETACH -> Removes both parent and child entity from parent session
 
+Instead of all, you could use curly brackets to only specify the operations that you want to perform.
+```java
 
+import jakarta.persistence.CascadeType;
+
+@OneToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
+
+```
+
+# Hibernate Lazy/Eager loading:
+
+You can specify the type of fetch by `fetch` attribute by @OneToOne, @OneToMany, @ManyToOne, @ManyToMany annotations.
+
+Lazy: 
+- Default type of fetch. The associated entity is only loaded when it is accessed for the first time. Could be efficient if the entity is not used for the most part of the logic.
+
+Eager:
+
+- The associated entity is loaded when the parent entity is loaded.
+
+# Bi-directional Mapping
+
+Establishes a bidirectional mapping from child entity to parent entity. 
+
+```java
+
+// At the child entity class
+
+// mappedby value must be the property name from parent entity class ---> private InstructorDetail instructorDetail;
+// cascade helps to propagate changes to the parent entity class.
+@OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+private Instructor instructor;
+
+```
+
+## Deleting while keeping one entity
+
+```java
+
+InstructorDetail temp = entityManager.find(InstructorDetail.class, id);
+Instructor ins = temp.getInstructor();
+ins.setInstructorDetail(null);
+entityManager.remove(temp);
+
+```
+
+
+# Pitfalls
+
+- Unknown field "<name>" in field list ---> Double check for spelling/naming mistakes, check the database to see if you have mispelled anything.
 
 # About the project
 

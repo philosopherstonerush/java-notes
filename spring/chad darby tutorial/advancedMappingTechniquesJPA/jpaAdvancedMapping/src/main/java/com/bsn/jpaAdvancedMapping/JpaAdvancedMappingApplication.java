@@ -19,8 +19,20 @@ public class JpaAdvancedMappingApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(instructorDAO in) {
 		return runner -> {
-			createInstructor(in);
+//			createInstructor(in);
+//			findInstructor(1, in);
+//			deleteInstructor(1, in);
+//			findInstructorDetail(3, in);
+			deleteInstructorDetail(3, in);
 		};
+	}
+
+	private void deleteInstructor(int i, instructorDAO in) {
+		in.deleteID(i);
+	}
+
+	private void findInstructor(int id, instructorDAO in) {
+		System.out.println(in.findById(id));
 	}
 
 	private void createInstructor(instructorDAO in) {
@@ -34,4 +46,13 @@ public class JpaAdvancedMappingApplication {
 		in.save(instructor);
 
 	}
+
+	private void findInstructorDetail(int i, instructorDAO in) {
+		System.out.println(in.findInstructorDetailById(i).getInstructor());
+	}
+
+	private void deleteInstructorDetail(int i, instructorDAO in) {
+		in.deleteInstructorDetailByID(i);
+	}
+
 }

@@ -3,7 +3,7 @@ package com.bsn.jpaAdvancedMapping.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "instructor_detail")
+@Table(name = "instructor")
 public class Instructor {
 
     @Id
@@ -17,6 +17,7 @@ public class Instructor {
     @Column(name="email")
     private String email;
 
+    // One way mapping with instructor --> instructorDetail
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetail instructorDetail;
@@ -60,5 +61,16 @@ public class Instructor {
 
     public void setInstructorDetail(InstructorDetail instructorDetail) {
         this.instructorDetail = instructorDetail;
+    }
+
+    @Override
+    public String toString() {
+        return "Instructor{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                ", instructorDetail=" + instructorDetail +
+                '}';
     }
 }
