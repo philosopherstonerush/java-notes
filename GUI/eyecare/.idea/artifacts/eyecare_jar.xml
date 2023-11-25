@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="eyecare:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/eyecare_jar</output-path>
+    <root id="archive" name="eyecare.jar">
+      <element id="module-output" name="eyecare" />
+    </root>
+  </artifact>
+</component>

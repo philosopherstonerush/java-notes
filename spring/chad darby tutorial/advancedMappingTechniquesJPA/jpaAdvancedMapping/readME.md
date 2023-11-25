@@ -16,6 +16,8 @@ Suppose we have a User with address stored in a different table, then we have on
 
 ```java
 
+// While defining user entity:-
+
 @OneToOne(cascade = CascadeType.ALL)
 @JoinColumn(name = "address_id", referencedColumnName = "id")
 private Address address;
