@@ -5,7 +5,7 @@ import java.io.File;
 
 public class AudioControl {
 
-    private String filepath = "src/main/resources/remainder.wav";
+    private String filepath = "C:\\Users\\suvarna narayanan\\Desktop\\notes\\java notes\\GUI\\eyecare\\src\\main\\resources\\remainder.wav";
     private File f = new File(filepath);
     Clip clip;
     AudioInputStream audioIn;

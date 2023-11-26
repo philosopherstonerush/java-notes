@@ -9,6 +9,8 @@ The pack method sizes the frame so that all its contents are at or above their p
 ## Pre-requisties:
 
 - Make sure that you have `GUI designer` settings in intellj ---> generated gui set to java source code.
-- To deploy, create a new artifact with `file\project_structure\` and new jar file artifact from existing dependencies - make sure it points to that class with `main` method implemented.
+- To make a jar file with maven, you need that jar file plugin under build tag ---> Make sure that your main class points to where your `main` method implementing class is. Everything else is unnecessary.
+- Give the audio file's absolute path for the timer, in `src\main\java\AudioControl`
+I could not package the audio file with the jar as I cannot access it within the jar
 
-Explanations on how individual thing works is given in BreakPanel
+Explanations on how individual thing works is given in BreakPanel and EyeCare

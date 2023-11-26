@@ -9,5 +9,8 @@
         <module name="eyecare" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eyecare" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
