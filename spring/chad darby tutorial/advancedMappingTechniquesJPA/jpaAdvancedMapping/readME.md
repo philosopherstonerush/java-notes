@@ -58,6 +58,25 @@ Eager:
 
 - The associated entity is loaded when the parent entity is loaded.
 
+## Best practice?
+
+Always ensure that your program prioritizes lazy loading over eager loading.
+
+Lazy loading actually requires you to have an open hibernate session ---> if its closed, then it throws an exception 
+
+## pitfalls
+
+1) Sometimes the mapping is lazy by default and then when you try to access the data you get this error --> no session, which means the hibernate session closed before you could ask for further data
+```json
+
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.bsn.jpaAdvancedMapping.entity.Instructor.courses: could not initialize proxy - no Session
+
+
+```
+    - Solution #1 --> Fetch by Eager
+    - Solution #2 --> Get the courses separately and then set it to the courses when accessed.
+    - Solution #3 --> Instead of hardcoding fetch type eager to the fields, implement a method with a typed query to fetch the eager like result that way you can have the best of both worlds
+
 # Bi-directional Mapping
 
 Establishes a bidirectional mapping from child entity to parent entity. 
@@ -73,6 +92,8 @@ private Instructor instructor;
 
 ```
 
+The value of mappedBy attribute points back to the variable that references to this (NOT THE DATABASE TABLE).
+
 ## Deleting while keeping one entity
 
 ```java
@@ -83,6 +104,11 @@ ins.setInstructorDetail(null);
 entityManager.remove(temp);
 
 ```
+
+# JoinColumn vs Mappedby - When to use either?
+
+The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table), whereas the attribute mappedBy indicates that the entity in this side is the inverse of the relationship, and the owner resides in the "other" entity. This also means that you can access the other table from the class which you've annotated with "mappedBy" (fully bidirectional relationship).
+
 
 
 # Pitfalls
