@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.awt.*;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -64,14 +65,45 @@ public class instructorDAOImpl  implements instructorDAO{
     @Override
     public Instructor findInstructorByIdWithCourses(int id) {
         TypedQuery query = entityManager.createQuery(
-                "select i from Instructor i"
+                "select i from Instructor i "
                 + "JOIN FETCH i.courses"
-                + "where i.id = :data", Instructor.class
+                + " where i.id = :data", Instructor.class
         );
 
         query.setParameter("data", id);
         Instructor in = (Instructor) query.getSingleResult();
         return in;
+    }
+
+    @Override
+    @Transactional
+    public void updateInstructor(Instructor in) {
+        entityManager.merge(in);
+    }
+
+    @Override
+    public Course findCourseById(int id) {
+        return entityManager.find(Course.class, id);
+    }
+
+    @Override
+    @Transactional
+    public void updateCourse(Course c) {
+        entityManager.merge(c);
+    }
+
+    @Override
+    @Transactional
+    public void deleteInstructorById(int id) {
+        Instructor in = findById(id);
+
+        // removing instructor reference from these courses or else we would get foreign key constraint error
+        List<Course> courses = findCoursesByInstructorId(id);
+        for(Course c: courses) {
+            c.setInstructor(null);
+        }
+
+        entityManager.remove(in);
     }
 
     // This is only if you dont want to propagate delete operation to parent entity vice versa

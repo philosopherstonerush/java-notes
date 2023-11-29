@@ -15,4 +15,9 @@ public interface instructorDAO {
     public void deleteInstructorDetailByID(int id);
     public List<Course>  findCoursesByInstructorId(int id);
     public Instructor findInstructorByIdWithCourses(int id);
+    public void updateInstructor(Instructor in);
+    public Course findCourseById(int id);
+    public void updateCourse(Course c);
+    public void deleteInstructorById(int id);
+
 }

@@ -28,8 +28,29 @@ public class JpaAdvancedMappingApplication {
 //			findInstructorDetail(3, in);
 //			deleteInstructorDetail(3, in);
 //			createCoursesWithInstructor(in);
-			fetchtype_demo_fetching_intructor_courses(in);
+//			fetchtype_demo_fetching_intructor_courses(in);
+//			update_instructor(in);
+//			update_course(in);
+			delete_instructor(in);
 		};
+
+	}
+
+	private void delete_instructor(instructorDAO in) {
+		// Removes the courses reference to this instance as well
+		in.deleteInstructorById(1);
+	}
+
+	private void update_course(instructorDAO in) {
+		Course c = in.findCourseById(10);
+		c.setTitle("this is fine");
+		in.updateCourse(c);
+	}
+
+	private void update_instructor(instructorDAO in) {
+		Instructor temp = in.findById(1);
+		temp.setFirst_name("naukri");
+		in.updateInstructor(temp);
 	}
 
 	private void fetchtype_demo_fetching_intructor_courses(instructorDAO in) {

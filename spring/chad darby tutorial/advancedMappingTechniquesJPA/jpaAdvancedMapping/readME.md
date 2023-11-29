@@ -77,6 +77,14 @@ Caused by: org.hibernate.LazyInitializationException: failed to lazily initializ
     - Solution #2 --> Get the courses separately and then set it to the courses when accessed.
     - Solution #3 --> Instead of hardcoding fetch type eager to the fields, implement a method with a typed query to fetch the eager like result that way you can have the best of both worlds
 
+```json
+
+mismatched input 'FETCH' expecting
+
+```
+
+Make sure your typed queries are properly formatted if you concatenation to join them.
+
 # Bi-directional Mapping
 
 Establishes a bidirectional mapping from child entity to parent entity. 
