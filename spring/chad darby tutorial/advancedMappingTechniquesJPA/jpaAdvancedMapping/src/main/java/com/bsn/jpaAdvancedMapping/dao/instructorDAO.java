@@ -19,5 +19,5 @@ public interface instructorDAO {
     public Course findCourseById(int id);
     public void updateCourse(Course c);
     public void deleteInstructorById(int id);
-
+    public void addCourse(Course course);
 }

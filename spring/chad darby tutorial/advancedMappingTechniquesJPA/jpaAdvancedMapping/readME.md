@@ -117,7 +117,17 @@ entityManager.remove(temp);
 
 The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table), whereas the attribute mappedBy indicates that the entity in this side is the inverse of the relationship, and the owner resides in the "other" entity. This also means that you can access the other table from the class which you've annotated with "mappedBy" (fully bidirectional relationship).
 
+# JOIN FETCH (JPQL)
 
+Join fetch is used to retrieve data from two different tables.
+
+# OneToMany and ManyToOne (Coupled interaction)
+
+If you refer courses and instructor, you would notice how @OneToMany and @ManyToOne is defined. 
+
+Helpful resource
+
+https://stackoverflow.com/questions/16119531/hibernate-jpa-manytoone-vs-onetomany
 
 # Pitfalls
 

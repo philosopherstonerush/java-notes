@@ -4,6 +4,7 @@ import com.bsn.jpaAdvancedMapping.dao.instructorDAO;
 import com.bsn.jpaAdvancedMapping.entity.Course;
 import com.bsn.jpaAdvancedMapping.entity.Instructor;
 import com.bsn.jpaAdvancedMapping.entity.InstructorDetail;
+import com.bsn.jpaAdvancedMapping.entity.Review;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,8 +32,20 @@ public class JpaAdvancedMappingApplication {
 //			fetchtype_demo_fetching_intructor_courses(in);
 //			update_instructor(in);
 //			update_course(in);
-			delete_instructor(in);
+//			delete_instructor(in);
+			add_courses_with_reviews(in);
 		};
+
+	}
+
+	private void add_courses_with_reviews(instructorDAO in) {
+
+		Course c = new Course("This is awesome");
+		Review r = new Review("HELLO");
+		Review r1 = new Review("THISISCOOOLL");
+
+		c.add(r); c.add(r1);
+		in.addCourse(c);
 
 	}
 

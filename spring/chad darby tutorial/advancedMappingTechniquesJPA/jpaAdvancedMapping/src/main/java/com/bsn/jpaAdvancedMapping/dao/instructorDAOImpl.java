@@ -106,6 +106,12 @@ public class instructorDAOImpl  implements instructorDAO{
         entityManager.remove(in);
     }
 
+    @Override
+    @Transactional
+    public void addCourse(Course course) {
+        entityManager.persist(course);
+    }
+
     // This is only if you dont want to propagate delete operation to parent entity vice versa
     @Transactional
     public void deleteInstructorDetailByIdSpecial(int id) {
