@@ -20,6 +20,11 @@ public class Student {
     @Column(name="email")
     private String email;
 
+    /*
+
+    When you delete this student, the relationship in the course_student table is also deleted without the actual course record getting deleted.
+
+     */
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
             name = "course_student",
