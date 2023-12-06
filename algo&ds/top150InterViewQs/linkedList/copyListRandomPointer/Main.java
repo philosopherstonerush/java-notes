@@ -101,6 +101,12 @@ public class Main {
     }
 
     // Best way - O(n) time complexity
+
+    /**
+     *
+     * Mnemonics:
+     * CODCONRORNS
+     */
     public Node copyLeetCode(Node head) {
 
         // temp is not used to traverse instead as a holder for new nodes.

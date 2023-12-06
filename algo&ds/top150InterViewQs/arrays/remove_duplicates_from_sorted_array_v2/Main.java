@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  *
  *
@@ -34,6 +37,7 @@ public class Main {
             }
 
         }
+        System.out.println(Arrays.toString(nums));
         return j;
     }
 

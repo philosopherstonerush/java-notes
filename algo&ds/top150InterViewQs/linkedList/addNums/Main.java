@@ -138,6 +138,22 @@ public class Main {
         int carry = 0;
 
         // clever way to put it all into one single while loop
+        /**
+         *
+         * Mnemonic:
+         * WN1N2CNAN1N2CA
+         * WHILE
+         * N1
+         * N2
+         * CARRY
+         * NULL
+         * ADD
+         * N1
+         * N2
+         * CARRY
+         * APPEND
+         *
+         */
         while(l1 != null || l2 != null || carry != 0) {
             int digit1 = (l1 != null) ? l1.val : 0;
             int digit2 = (l2 != null) ? l2.val : 0;

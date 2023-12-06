@@ -3,6 +3,7 @@ package com.bsn.jpaAdvancedMapping.dao;
 import com.bsn.jpaAdvancedMapping.entity.Course;
 import com.bsn.jpaAdvancedMapping.entity.Instructor;
 import com.bsn.jpaAdvancedMapping.entity.InstructorDetail;
+import com.bsn.jpaAdvancedMapping.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
@@ -110,6 +111,36 @@ public class instructorDAOImpl  implements instructorDAO{
     @Transactional
     public void addCourse(Course course) {
         entityManager.persist(course);
+    }
+
+    @Override
+    public Course findStudentsAndCoursesByCourseId(int id) {
+        TypedQuery query = entityManager.createQuery(
+                "select c from Course c "
+                        + "JOIN FETCH c.students"
+                        + " where c.id = :data", Course.class
+        );
+        query.setParameter("data", id);
+        Course c = (Course) query.getSingleResult();
+        return c;
+    }
+
+    @Override
+    public Student findStudentsAndCOursesByStudentId(int id) {
+        TypedQuery query = entityManager.createQuery(
+                "select s from Student s "
+                        + "JOIN FETCH s.courses"
+                        + " where c.id = :data", Student.class
+        );
+        query.setParameter("data", id);
+        Student s = (Student) query.getSingleResult();
+        return s;
+    }
+
+    @Override
+    @Transactional
+    public void updateStudent(Student tempStudent) {
+        entityManager.persist(tempStudent);
     }
 
     // This is only if you dont want to propagate delete operation to parent entity vice versa

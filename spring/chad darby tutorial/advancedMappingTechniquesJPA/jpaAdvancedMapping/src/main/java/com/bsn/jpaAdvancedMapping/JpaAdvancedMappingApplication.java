@@ -23,17 +23,20 @@ public class JpaAdvancedMappingApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(instructorDAO in) {
 		return runner -> {
+			/* One to One */
 //			createInstructor(in);
 //			findInstructor(1, in);
 //			deleteInstructor(1, in);
 //			findInstructorDetail(3, in);
 //			deleteInstructorDetail(3, in);
+			/* One to many */
 //			createCoursesWithInstructor(in);
 //			fetchtype_demo_fetching_intructor_courses(in);
 //			update_instructor(in);
 //			update_course(in);
 //			delete_instructor(in);
-			add_courses_with_reviews(in);
+//			add_courses_with_reviews(in);
+
 		};
 
 	}

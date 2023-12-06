@@ -3,6 +3,7 @@ package com.bsn.jpaAdvancedMapping.dao;
 import com.bsn.jpaAdvancedMapping.entity.Course;
 import com.bsn.jpaAdvancedMapping.entity.Instructor;
 import com.bsn.jpaAdvancedMapping.entity.InstructorDetail;
+import com.bsn.jpaAdvancedMapping.entity.Student;
 
 import java.util.List;
 
@@ -20,4 +21,8 @@ public interface instructorDAO {
     public void updateCourse(Course c);
     public void deleteInstructorById(int id);
     public void addCourse(Course course);
+    public Course findStudentsAndCoursesByCourseId(int id);
+    public Student findStudentsAndCOursesByStudentId(int id);
+    public void updateStudent(Student tempStudent);
+
 }

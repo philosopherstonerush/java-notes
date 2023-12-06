@@ -113,6 +113,10 @@ entityManager.remove(temp);
 
 ```
 
+# What the fuck is inverse side?
+
+Inverse just means that the following information is something that can be found on the other table with the respect to the current table in focus.
+
 # JoinColumn vs Mappedby - When to use either?
 
 The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table), whereas the attribute mappedBy indicates that the entity in this side is the inverse of the relationship, and the owner resides in the "other" entity. This also means that you can access the other table from the class which you've annotated with "mappedBy" (fully bidirectional relationship).
@@ -128,6 +132,22 @@ If you refer courses and instructor, you would notice how @OneToMany and @ManyTo
 Helpful resource
 
 https://stackoverflow.com/questions/16119531/hibernate-jpa-manytoone-vs-onetomany
+
+# Many to Many
+
+In order to define a many to many mapping, you use something like a join table, which connects multiple records of one entity to multiple records of another entity.
+
+```json
+
+@ManyToMany
+@JoinTable(
+  name = "course_like", 
+  joinColumns = @JoinColumn(name = "student_id"), 
+  inverseJoinColumns = @JoinColumn(name = "course_id"))
+Set<Course> likedCourses;
+
+```
+`course_like` is a table that has info about student_id and course_id
 
 # Pitfalls
 
