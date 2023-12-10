@@ -37,6 +37,12 @@ You can convert them to AspectJ using @Aspect annotation
 
 Only supports `Method-level` join points
 
+# PointCut
+
+Spring AOP uses AspectJ's pointcut expression language
+
+- Execution Pointcuts :- Applies to execution methods
+
 # Project setup
 
 When starting a new project - select dependency `spring-boot-starter-aop`
