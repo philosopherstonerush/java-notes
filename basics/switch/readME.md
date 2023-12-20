@@ -18,6 +18,8 @@ Don't think about it as series of 'if/else' statements but rather a pointer to s
 
 # You can skip break (JDK 14)
 
+This is a result of series of evolution java is undertaking to make switch a full blown pattern matching expression. 
+
 ```
 
     switch (value) {
@@ -27,4 +29,6 @@ Don't think about it as series of 'if/else' statements but rather a pointer to s
     }
 
 ```
+
+Couple of things to note, you can return switch expressions, 
 
