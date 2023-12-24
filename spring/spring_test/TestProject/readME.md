@@ -152,6 +152,26 @@ class HttpRequestTest {
 
 ```
 
+## How to test Errors?
+
+You can't test if the url gets forwarded to "/error" and then error endpoint handler gives you the right information back. Maintainers of MockMvc tell you to directly test "/error" with the appropriate preconditions
+
+```
+
+MvcResult result = this.mockMvc
+                .perform(get("/error")
+                        .contentType("text/html")
+                        // pre-conditions
+                        .requestAttr(RequestDispatcher.ERROR_REQUEST_URI, "/email-scrapper/aaa")
+                        .requestAttr(RequestDispatcher.ERROR_STATUS_CODE, 404)
+                )
+
+                .andReturn();
+        String content = result.getResponse().getContentAsString();
+        assertThat(content.contains("If you see this often, please contact admin.")).isEqualTo(true);
+
+```
+
 ## Pitfalls
 
 ### Disable CSRF
