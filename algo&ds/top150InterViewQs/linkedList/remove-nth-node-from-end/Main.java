@@ -20,7 +20,7 @@ public class Main {
         n4.next = n5;
         n5.next = null;
 
-        ListNode head = removeNthFromEnd(n1, 1);
+        ListNode head = removeNthFromEnd(n1, 3);
 
         System.out.println("Done");
 

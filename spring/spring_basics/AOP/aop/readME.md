@@ -43,6 +43,79 @@ Spring AOP uses AspectJ's pointcut expression language
 
 - Execution Pointcuts :- Applies to execution methods
 
+## Pointcut expression language:
+
+```
+
+execution(modifiers-pattern? return-type-pattern declaring-type-pattern? method-name-pattern(param-pattern) throws-pattern?)
+
+```
+
+fields with `?` is optional
+
+### Examples
+
+match method - addAccount from any class - with no arguments
+```
+
+execution(public void addAccount())
+
+```
+
+match method - updateAccount for a particular class
+
+```
+
+execution(public void com.bsn.tut.aop.repositories.AccountDAO.updateAccount())
+
+```
+
+match wildcard methods - addFakeAccount for a particular class
+
+```
+
+execution(public void add* ())
+
+```
+
+match method return type
+
+```
+The below pattern matches with any method that has any return type and also starts with count
+
+execution(* count* ())
+
+```
+
+match method with parameter of Account class
+
+```
+
+execution(* addAccount(com.bsn.tut.aop.entity.Account))
+
+```
+
+match method with any number of parameters
+
+```
+
+execution(* addAccount(..))
+
+```
+
+match any method that returns any type with any arguments 
+
+basically match by package
+
+```
+After the * for return type
+first * - any class
+second * - any method
+
+execution(* com.bsn.tut.aop.repositories.*.*(..))
+
+```
+
 # Project setup
 
 When starting a new project - select dependency `spring-boot-starter-aop`

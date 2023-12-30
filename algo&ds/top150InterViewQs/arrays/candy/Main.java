@@ -34,6 +34,7 @@ public class Main {
 
         for(int i = ratings.length - 2; i >= 0; i--) {
             if(ratings[i] > ratings[i+1]) {
+                // max is used because, we wouldnt know if candies already has the highest candy count at that index.
                 candies[i] = Math.max(candies[i], candies[i+1] + 1);
             }
         }

@@ -40,7 +40,7 @@ public class Main {
     public ListNode reverseBetween(ListNode head, int left, int right) {
 
         if(head == null) return null;
-        if(head.next == null) return null;
+        if(head.next == null) return head;
 
 
         ListNode dummy = new ListNode(0, head);
