@@ -30,52 +30,81 @@ import java.util.*;
 
 public class LRUCache {
 
-    private HashMap<Integer, Integer> LList;
-    private int currCapacity = 0;
-    private int maxCapacity;
-    private Deque<Integer> leastRecentlyUsed = new LinkedList<>();
+    class Node {
+        int key;
+        int val;
+        Node prev;
+        Node next;
 
-    public LRUCache(int capacity) {
-        this.LList = new HashMap<>();
-        this.maxCapacity = capacity;
+        Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
     }
 
-    // Unnecessary contains key check makes it run slower!
+    Node head = new Node(-1, -1);
+    Node tail = new Node(-1, -1);
+    int cap;
+    HashMap<Integer, Node> m = new HashMap<>();
+
+    public LRUCache(int capacity) {
+        cap = capacity;
+        head.next = tail;
+        tail.prev = head;
+    }
+
+    private void addNode(Node newnode) {
+        Node temp = head.next;
+
+        newnode.next = temp;
+        newnode.prev = head;
+
+        head.next = newnode;
+        temp.prev = newnode;
+    }
+
+    private void deleteNode(Node delnode) {
+        Node prevv = delnode.prev;
+        Node nextt = delnode.next;
+
+        prevv.next = nextt;
+        nextt.prev = prevv;
+    }
 
     public int get(int key) {
-        int val;
-        if(LList.containsKey(key)) {
-            val = LList.get(key);
-            leastRecentlyUsed.remove(key);
-            leastRecentlyUsed.addFirst(key);
-            return val;
+
+        Node val = m.getOrDefault(key, null);
+
+        if (val != null) {
+            Node resNode = m.get(key);
+            int ans = resNode.val;
+
+            m.remove(key);
+            deleteNode(resNode);
+            addNode(resNode);
+
+            m.put(key, head.next);
+            return ans;
         }
         return -1;
     }
 
     public void put(int key, int value) {
-        if(LList.containsKey(key)) {
-            LList.put(key, value);
-            leastRecentlyUsed.remove(key);
-            leastRecentlyUsed.addFirst(key);
-        } else {
-            if(currCapacity >= maxCapacity) {
-                int flag = 0;
-                do {
-                    int LRUkey = leastRecentlyUsed.removeLast();
-                    if(LList.containsKey(LRUkey)) {
-                        LList.remove(LRUkey);
-                        LList.put(key ,value);
-                        leastRecentlyUsed.addFirst(key);
-                        flag = 1;
-                    }
-                } while(flag == 0 && leastRecentlyUsed.size() != 0);
-            } else {
-                leastRecentlyUsed.remove(key);
-                LList.put(key, value);
-                leastRecentlyUsed.addFirst(key);
-                currCapacity++;
-            }
+
+        Node val = m.getOrDefault(key, null);
+
+        if (val != null) {
+            Node curr = m.get(key);
+            m.remove(key);
+            deleteNode(curr);
         }
+
+        if (m.size() == cap) {
+            m.remove(tail.prev.key);
+            deleteNode(tail.prev);
+        }
+
+        addNode(new Node(key, value));
+        m.put(key, head.next);
     }
 }

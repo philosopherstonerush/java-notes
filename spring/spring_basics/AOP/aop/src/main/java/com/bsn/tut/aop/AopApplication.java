@@ -1,10 +1,14 @@
 package com.bsn.tut.aop;
 
+import com.bsn.tut.aop.logic.Downloader;
 import com.bsn.tut.aop.repositories.AccountDAO;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class AopApplication {
@@ -14,13 +18,37 @@ public class AopApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(AccountDAO accountDAO) {
+	public CommandLineRunner commandLineRunner(AccountDAO accountDAO, Downloader d) {
 		return runner -> {
 //			addAccountExample(accountDAO);
 //			updateAccountExample(accountDAO);
 //			fakeAccountExample(accountDAO);
-			countingAccountExample(accountDAO);
+//			countingAccountExample(accountDAO);
+//			declaration_exmaple(accountDAO);
+//			execute_download(d);
+
+			after_returning_advice_getting_list_of_accounts(accountDAO);
+
 		};
+	}
+
+	private void after_returning_advice_getting_list_of_accounts(AccountDAO accountDAO) {
+
+		List<Account> accounts = accountDAO.findAccounts();
+
+		System.out.println("IN MAIN");
+
+	}
+
+	private void execute_download(Downloader d) {
+		d.downloadingLinux();
+		d.downloadingWindows();
+	}
+
+
+	private void declaration_exmaple(AccountDAO accountDAO) {
+		accountDAO.declareWar();
+		accountDAO.declarePeace();
 	}
 
 	private void countingAccountExample(AccountDAO accountDAO) {
@@ -29,7 +57,7 @@ public class AopApplication {
 	}
 
 	public void addAccountExample(AccountDAO accountDAO){
-		accountDAO.addAccount();
+		accountDAO.addAccount("suvarna");
 	}
 
 	public void updateAccountExample(AccountDAO accountDAO) {
