@@ -2,6 +2,7 @@ package com.bsn.tut.aop;
 
 import com.bsn.tut.aop.logic.Downloader;
 import com.bsn.tut.aop.repositories.AccountDAO;
+import com.bsn.tut.aop.service.FortuneService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +19,7 @@ public class AopApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(AccountDAO accountDAO, Downloader d) {
+	public CommandLineRunner commandLineRunner(AccountDAO accountDAO, Downloader d, FortuneService fs) {
 		return runner -> {
 //			addAccountExample(accountDAO);
 //			updateAccountExample(accountDAO);
@@ -26,17 +27,43 @@ public class AopApplication {
 //			countingAccountExample(accountDAO);
 //			declaration_exmaple(accountDAO);
 //			execute_download(d);
-
-			after_returning_advice_getting_list_of_accounts(accountDAO);
-
+//			after_returning_advice_getting_list_of_accounts(accountDAO);
+//			after_throwing_exception(accountDAO);
+//			after_finally_logging(accountDAO);
+			around_advice(fs);
 		};
 	}
+
+	private void around_advice(FortuneService fs) {
+
+		fs.todays_fortune();
+
+	}
+
+	private void after_finally_logging(AccountDAO accountDAO) {
+
+		System.out.println("IN MAIN");
+		accountDAO.findAccountsEvenWithOrWithoutException(false);
+
+	}
+
+	private void after_throwing_exception(AccountDAO accountDAO) {
+
+		System.out.println("IN MAIN");
+		accountDAO.findAccountsButThrowException();
+
+	}
+
 
 	private void after_returning_advice_getting_list_of_accounts(AccountDAO accountDAO) {
 
 		List<Account> accounts = accountDAO.findAccounts();
 
 		System.out.println("IN MAIN");
+
+		for(Account elem: accounts) {
+			System.out.println(elem);
+		}
 
 	}
 

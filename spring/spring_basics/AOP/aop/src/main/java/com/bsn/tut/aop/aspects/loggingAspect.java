@@ -2,10 +2,8 @@ package com.bsn.tut.aop.aspects;
 
 import com.bsn.tut.aop.Account;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +13,39 @@ import java.util.List;
 @Component
 public class loggingAspect {
 
+    // Around advice
+    @Around(value = "execution(* com.bsn.tut.aop.service.FortuneService.todays_fortune(..))")
+    public Object around_advice_example_fortune_service(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("AROUND ADVICE");
+        Object result = joinPoint.proceed();
+        System.out.println("RESULT : " + result);
+        return result;
+    }
+
+    // After Advice
+    // The data is always logged or manipulated no matter if exception or not
+
+    @After(
+            value = "execution(* com.bsn.tut.aop.repositories.AccountDAO.findAccountsEvenWithOrWithoutException(..))"
+    )
+    public void log_add_the_time(JoinPoint theJoinPoint) {
+        System.out.println("AFTER FINALLY BAE");
+    }
+
+    // After Throwing Advice
+    // The exception is intercepted and then logged
+
+    @AfterThrowing(
+            pointcut = "execution(* com.bsn.tut.aop.repositories.AccountDAO.findAccountsButThrowException(..))",
+            throwing = "theExc"
+    )
+    public void log_exception_thrown(JoinPoint theJoinPoint, Throwable theExc) {
+        System.out.println("THIS EXCEPTION IS THROWN " + theExc );
+    }
 
     // After Returning Advice
     // It is important that the string value for returning matches with the parameter.
+
     @AfterReturning(
         pointcut = "execution(* com.bsn.tut.aop.repositories.AccountDAO.findAccounts(..))",
         returning = "result"
@@ -26,6 +54,12 @@ public class loggingAspect {
         for(Account elem: result) {
             System.out.println("AFTER RETURNING + " + elem);
         }
+
+        // returning values can be modified this way
+        for (Account elem: result) {
+            elem.setName(elem.getName().toUpperCase());
+        }
+
     }
 
 

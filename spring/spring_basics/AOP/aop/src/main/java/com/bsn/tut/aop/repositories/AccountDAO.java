@@ -13,4 +13,6 @@ public interface AccountDAO {
     void declareWar();
     void declarePeace();
     List<Account> findAccounts();
+    List<Account> findAccountsButThrowException();
+    List<Account> findAccountsEvenWithOrWithoutException(Boolean opt);
 }

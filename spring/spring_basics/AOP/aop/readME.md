@@ -226,7 +226,75 @@ You can access
 
 # After Returning Advice:
 
-This piece of aspect is executed after the method is finished executing and you would have to do something with the result
+This piece of aspect is executed after the method is finished executing, and you would have to do something with the result
+
+```java 
+
+    // After Returning Advice
+    // It is important that the string value for returning matches with the parameter.
+    @AfterReturning(
+        pointcut = "execution(* com.bsn.tut.aop.repositories.AccountDAO.findAccounts(..))",
+        returning = "result"
+    )
+    public void log_account_method_and_result(JoinPoint theJoinPoint, List<Account> result) {
+        for(Account elem: result) {
+            System.out.println("AFTER RETURNING + " + elem);
+        }
+    }
+
+```
+
+## Modify return value
+
+```java
+
+for (Account elem: result) {
+    elem.setName(elem.getName().toUpperCase());
+}
+
+```
+
+You don't have to explicitly return a value back.
+
+But you can return something other than the usual result as well.
+
+# After Throwing Advice:
+
+Occurs when an Exception is thrown.
+
+```java
+
+@AfterThrowing(
+      pointcut = "execution(* com.bsn.tut.aop.repositories.AccountDAO.findAccountsButThrowException(..))",
+      throwing = "theExc"
+    )
+public void log_exception_thrown(JoinPoint theJoinPoint, Throwable theExc) {
+    System.out.println("THIS EXCEPTION IS THROWN " + theExc );
+}
+
+```
+
+The exception is intercepted right after its thrown in the method, before it even reaches the main code.
+
+# After Advice:
+
+alias: After Finally Advice
+
+The output is logged no matter success or failure. 
+
+NOTE: After advice does not have access to the exception thrown - in that case you have to use After Throwing. Thereby, the code inside after advice must not depend on success or exception path and must be common for both like logging/auditing.
+
+# Around Advice:
+
+Combines the usecase of both @Before and @After advices.
+
+Important thing to note is that, the Aspect invokes the actual method call over the spring container. It gets back the results and then passes it on.
+
+## Proceeding JoinPoint vs JoinPoint:
+
+![img.png](notes/proceedingJointPoint.png)
+
+ProceedingJoinPoint has access to `proceed` method that has to be invoked for the method call to access the intended target.
 
 
 # Project setup

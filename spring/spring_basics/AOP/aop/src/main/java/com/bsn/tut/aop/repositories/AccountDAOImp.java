@@ -57,4 +57,18 @@ public class AccountDAOImp implements AccountDAO{
         return accounts;
 
     }
+
+    @Override
+    public List<Account> findAccountsButThrowException() {
+        throw new RuntimeException("After throwing advice executes");
+    }
+
+    @Override
+    public List<Account> findAccountsEvenWithOrWithoutException(Boolean opt) {
+        if (opt) {
+            return this.findAccounts();
+        } else {
+            return this.findAccountsButThrowException();
+        }
+    }
 }
