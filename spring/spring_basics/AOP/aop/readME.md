@@ -3,7 +3,7 @@ I have a pretty good introduction about AOP in crud_apis. Please do refer to it.
 
 # AOP Terminology:
 
-- Aspect: Module of code for a cross cutting concer (logging, security)
+- Aspect: Module of code for a cross cutting concern (logging, security)
 - Advice: What action is taken and when it should be applied
 - Join point: When to apply code during program execution
 - Pointcut: A predicate expression for where the advice should be applied
