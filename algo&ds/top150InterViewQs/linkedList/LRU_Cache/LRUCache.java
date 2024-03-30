@@ -79,11 +79,9 @@ public class LRUCache {
             Node resNode = m.get(key);
             int ans = resNode.val;
 
-            m.remove(key);
             deleteNode(resNode);
             addNode(resNode);
 
-            m.put(key, head.next);
             return ans;
         }
         return -1;
