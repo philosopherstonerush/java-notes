@@ -20,6 +20,6 @@ A simple e-commerce spring boot app made with latest java features.
 # Steps to run the project
 
 1) Install JDK 17 or later
-2) Download the jar file from /target or build using `mvnw install` while in project root directory
+2) Download the jar file - <a href="./demo.jar" download>Click to Download</a> or build using `mvnw install` while in project root directory
 3) Use Postman, Insomnia or curl to test any of the endpoints above.
 4) You can see values stored in the database at `localhost:8080/h2-console/`
