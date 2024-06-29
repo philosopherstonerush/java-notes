@@ -23,6 +23,9 @@ public class Main {
         System.out.println(isValid("(]"));
     }
 
+
+    // https://leetcode.com/problems/valid-parentheses/solutions/3399077/easy-solutions-in-java-python-and-c-look-at-once-with-exaplanation/?envType=study-plan-v2&envId=top-interview-150
+
     public static boolean isValid(String s) {
 
         // Convert the given String into character array

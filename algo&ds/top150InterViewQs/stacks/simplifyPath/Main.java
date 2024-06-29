@@ -29,61 +29,38 @@ public class Main {
 
     public static String simplifyPath(String path) {
 
-        // Split the string
-        ArrayList<String> splitString = new ArrayList<>(Arrays.asList(path.split("/")));
+        // adding directories to this
+        ArrayList<String> arr = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
 
-        // Initialize stack
-        Stack<String> stringStack = new Stack<>();
+        int i =0;
 
-        // result strings - directories.
-        ArrayList<String> result = new ArrayList<>();
+        while(i < path.length()) {
 
-        // remove the pointers to the same directory
-        splitString.remove(".");
+            // remove multiple trailing slashes
+            while(i < path.length() && path.charAt(i) == '/') i++;
+            // add characters together until you get the string between the trailing /
+            while(i < path.length() && path.charAt(i) != '/') sb.append(path.charAt(i++));
 
-        // remove empty strings
-        splitString.remove("");
+            // get the directory name
+            String ok = sb.toString();
 
-        for (String s : splitString) {
-            stringStack.push(s);
+            // if its .. remove the previous entry
+            if(ok.equals("..") && !arr.isEmpty()) arr.remove(arr.size()-1);
+            // if its . dont store
+            else if(!ok.isBlank() && !ok.equals(".") && !ok.equals("..")) arr.add(ok);
+            sb = new StringBuilder();
         }
 
-        // keep count of .. (go back directory) - to help with their subsequent appearance
-        int removeDirect = 0;
-
-        while(!stringStack.isEmpty()) {
-
-            // take the top element
-            String temp = stringStack.pop();
-
-            if (temp.equals("..")) {
-                removeDirect++;
-            } else if(temp.equals("")) {
-                continue;
-            } else if(temp.equals(".")) {
-                continue;
-            } else {
-                if (removeDirect != 0) {
-                    removeDirect--;
-                    continue;
-                }
-                result.add(temp);
-            }
+        StringBuilder result = new StringBuilder();
+        result.append("/");
+        for(String s : arr) {
+            result.append(s).append("/");
         }
 
-        // the result array is reversed to the last part appears last.
-        Collections.reverse(result);
-        StringBuilder str = new StringBuilder();
+        // remove the last / if directory is actually present
+        if (result.length() > 1) result.deleteCharAt(result.length()-1);
 
-        if(result.isEmpty()) {
-            str.append("/");
-        }
-
-        for (String s : result) {
-            str.append("/");
-            str.append(s);
-        }
-
-        return str.toString();
+        return result.toString();
     }
 }

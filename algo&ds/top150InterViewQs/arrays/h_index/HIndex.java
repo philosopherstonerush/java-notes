@@ -11,7 +11,7 @@ import java.util.Arrays;
 /**
  *
  * Explanation:
- * Sort the array of citations in descending order and iterate through the sorted array. For each paper, check if its citation count is greater than or equal to its position in the sorted array. Keep track of the maximum h-index encountered. This approach has a time complexity of O(n log n) due to the sorting step.
+ * Sort the array of citations in ascending order and iterate through the sorted array. For each paper, check if its citation count is greater than or equal to its position in the sorted array. Keep track of the maximum h-index encountered. This approach has a time complexity of O(n log n) due to the sorting step.
  *
  * It is sorted in ascending order so when you go from lowers indexes to higher indexes, the citations are naturally higher.
  *
@@ -24,7 +24,7 @@ import java.util.Arrays;
 public class HIndex {
 
     public static void main(String[] args) {
-        int[] numbers = new int[]{1,3,1};
+        int[] numbers = new int[]{3,0,6,1,5};
         System.out.println(hIndex(numbers));
     }
 
@@ -34,6 +34,7 @@ public class HIndex {
         System.out.println(Arrays.toString(citations));
         int n = citations.length;
         for(int i = 0; i < citations.length; i++) {
+            System.out.println("citations[i] = "+citations[i] + " / n-i = " + (n-i));
             if(citations[i] >= n-i) {
                 System.out.println("citations[i] = "+citations[i] + " / n-i = " + (n-i));
                 hindex = Math.max(hindex, n-i);

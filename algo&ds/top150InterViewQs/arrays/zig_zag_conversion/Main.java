@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
@@ -68,5 +69,37 @@ public class Main {
 
         return sb.toString();
     }
+
+    public static String convert2(String s, int numRows) {
+        ArrayList<ArrayList<Character>> rows = new ArrayList<ArrayList<Character>>();
+
+        for(int i = 0; i < numRows; i++) {
+            rows.add(new ArrayList<>());
+        }
+
+        StringBuilder sb = new StringBuilder(s);
+
+        int i = 0;
+        while(i < sb.length()) {
+            for(int j = 0; j < numRows; j++) {
+                if(i < sb.length()) rows.get(j).add(sb.charAt(i));
+                i++;
+            }
+            for(int j = numRows - 2; j > 0; j--) {
+                if(i < sb.length()) rows.get(j).add(sb.charAt(i));
+                i++;
+            }
+        }
+
+        StringBuilder finalRes = new StringBuilder();
+
+        rows.stream()
+                .flatMap(Collection::stream)
+                .forEach(finalRes::append);
+
+        return finalRes.toString();
+
+    }
+
 
 }

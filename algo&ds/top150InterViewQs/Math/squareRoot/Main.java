@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(mySqrt(4));
+        System.out.println(mySqrt(8));
     }
 
     // use binary search to find the square root
@@ -11,7 +11,7 @@ public class Main {
             return x;
         }
 
-        int start = 1;
+        int start = 0;
         int mid = -1;
         int end = x;
 
@@ -26,7 +26,7 @@ public class Main {
             }
         }
 
-        return Math.round(mid);
+        return end;
     }
 
 }

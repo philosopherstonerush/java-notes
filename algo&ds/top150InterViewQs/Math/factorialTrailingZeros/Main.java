@@ -19,21 +19,15 @@ public class Main {
     // Logarthmic runtime :)
     // Check out notes for a detailed explanation
     public static int trailingZeroes(int n) {
-
-        if(n < 5) return 0;
-
         int div = 5;
-        int trailingZeros = 0;
+        int zeros = 0;
+        while(n > div) {
+            int count = n / div;
+            zeros += count;
+            div = 5 * div;
+        }
 
-        do {
-
-            int temp = n / div;
-            trailingZeros += temp;
-            div = div * 5;
-
-        } while(div < n);
-
-        return trailingZeros;
+        return zeros;
     }
 
 }

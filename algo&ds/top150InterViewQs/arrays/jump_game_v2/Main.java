@@ -38,7 +38,23 @@ public class Main {
         System.out.println(jump(numbers));
     }
 
-    // leetcode's best solution
+    // this doesnt get into recursion when given {0,0,0,0}
+    public static int jumpBest(int[] nums) {
+        if(nums.length<=1)return 0;
+        int maxreach=0,curreach=0;
+        int jumps=0;
+        for(int i=0;i<nums.length;i++){
+            maxreach=Math.max(maxreach,nums[i]+i);
+            if(i>=curreach){
+                jumps++;
+                curreach=maxreach;
+            }
+            if(curreach>=nums.length-1)break;
+        }
+        return jumps;
+    }
+
+    // leetcode's best solution - gets into recursion if given input like {2,0,0,1}
     public static int jump(int[] nums) {
         for(int i = 1; i < nums.length; i++) {
             nums[i] = Math.max(nums[i]+i, nums[i-1]);

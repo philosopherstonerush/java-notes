@@ -1,4 +1,10 @@
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 /*
 
@@ -73,4 +79,36 @@ public class Main {
         }
         return curr_max;
     }
+
+    public static int majorityElementBest2(int[] nums) {
+        // JAVA 8 STREAM API WAY TO DO IT
+        Map<Integer, Long> numbers = Arrays.stream(nums)
+                .boxed()
+                .collect(
+                        groupingBy(p -> p, counting())
+                );
+
+        Integer maxElem = Collections
+                .max(numbers.entrySet(), Map.Entry.comparingByValue())
+                .getKey();
+
+        return maxElem;
+
+        // Another way
+//        Map<Integer, Long> numFreq = Arrays.stream(nums)
+//                .boxed()
+//                .collect(
+//                        Collectors.groupingBy(p-> p, Collectors.counting())
+//                );
+//
+//        return numFreq.entrySet().stream()
+//                .max(Map.Entry.comparingByValue())
+//                .get().getKey();
+
+    }
+
 }
+
+
+
+

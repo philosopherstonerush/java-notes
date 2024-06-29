@@ -33,7 +33,7 @@ public class Main {
             /**
              *
              *
-             * starting_index = i + 1 is done because, we know that even if we start in any of the gas stations before i we wont be able to go fast i.
+             * starting_index = i + 1 is done because, we know that even if we start in any of the gas stations before i we wont be able to go past i.
              *
              */
         }
