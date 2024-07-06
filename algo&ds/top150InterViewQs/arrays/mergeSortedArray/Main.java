@@ -29,7 +29,6 @@ public class Main {
 
         // While the smaller array is greater than 0
         while( y >= 0 ) {
-
             // fill the last element based on the biggest element in the two arrays. z goes from last index to 0, gradually merging greater elements first.
             if(x >= 0 && nums1[x] >= nums2[y] ) {
                 nums1[z--] = nums1[x--];

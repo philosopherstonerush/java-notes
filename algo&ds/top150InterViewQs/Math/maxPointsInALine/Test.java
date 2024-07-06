@@ -9,7 +9,6 @@ public class Test {
 
     public static int maxPoints(int[][] points) {
 
-
     }
 
 }

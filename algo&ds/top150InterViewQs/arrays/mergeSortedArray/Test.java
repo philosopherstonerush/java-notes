@@ -11,6 +11,9 @@ public class Test {
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
 
+
+
+        System.out.println(Arrays.toString(nums1));
     }
 
 }

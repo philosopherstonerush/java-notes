@@ -9,6 +9,9 @@ public class Test {
 
     public static void gameOfLife(int[][] board) {
 
+
+        printPretty(board);
+
     }
 
 
