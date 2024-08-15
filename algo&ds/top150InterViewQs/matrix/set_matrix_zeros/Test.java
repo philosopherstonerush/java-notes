@@ -7,6 +7,8 @@ public class Test {
     }
     public static void setZeroes(int[][] matrix) {
 
+
+        printPretty(matrix);
     }
 
     public static void printPretty(int[][] matrix) {

@@ -52,6 +52,18 @@ public class Main {
      *  This is for right rotation
      */
 
+    /*
+
+    nums = "----->-->"; k =3
+    result = "-->----->";
+
+    reverse "----->-->" we can get "<--<-----"
+    reverse "<--" we can get "--><-----"
+    reverse "<-----" we can get "-->----->"
+    this visualization help me figure it out :)
+
+     */
+
     public static void rotateBest(int[] nums, int k) {
         k = k % nums.length;
         nums = reverse(nums, 0, nums.length -1);

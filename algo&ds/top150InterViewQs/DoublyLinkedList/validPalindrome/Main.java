@@ -16,41 +16,18 @@ public class Main {
     }
 
     public static boolean isPalindrome(String s) {
-        if(s.isBlank()) return true;
-        int right = s.length() - 1;
-        s = s.toLowerCase();
+        StringBuilder sb = new StringBuilder();
 
-        String stringToCompare = cleanAllNonAlphaValues(s);
-        String reversedStringToCompare = reverseTheString(stringToCompare);
-
-        for(int i = 0; i < stringToCompare.length(); i++) {
-            if(stringToCompare.charAt(i) != reversedStringToCompare.charAt(i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    static boolean isAlphaNumeric(char ch) {
-        return (ch >= '0' & ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
-    }
-
-    static String cleanAllNonAlphaValues(String s) {
-        StringBuilder output = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if(isAlphaNumeric(s.charAt(i))) {
-                output.append(s.charAt(i));
-            }
-        }
-        return output.toString();
-    }
 
-    static String reverseTheString(String s) {
-        StringBuilder output = new StringBuilder();
-        for(int i = s.length() - 1; i >=0 ; i--) {
-            output.append(s.charAt(i));
+            char c = s.charAt(i);
+            if (Character.isLetterOrDigit(c)) {
+                sb.append(Character.toLowerCase(c));
+            }
+
         }
-        return output.toString();
+
+        return sb.toString().contentEquals(sb.reverse());
     }
 }
 

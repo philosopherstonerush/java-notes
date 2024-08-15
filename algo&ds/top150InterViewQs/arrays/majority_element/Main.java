@@ -28,6 +28,8 @@ public class Main {
 
         // The majority element is always in the n/2 position once sorted
 
+        // This is because the majority element occurs more than n/2 times, and when the array is sorted, it will occupy the middle position.
+
         Arrays.sort(nums);
         return nums[nums.length/2];
 

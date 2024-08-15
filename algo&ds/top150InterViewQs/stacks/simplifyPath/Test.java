@@ -5,11 +5,13 @@ import java.util.Stack;
 public class Test {
 
     public static void main(String[] args) {
-        String test = "/a/../../b/../c//.//";
+        String test = "/.../a/../b/c/../d/./";
         System.out.println(simplifyPath(test));
     }
 
     public static String simplifyPath(String path) {
+
+
     }
 
 }

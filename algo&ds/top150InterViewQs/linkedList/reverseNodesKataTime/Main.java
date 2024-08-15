@@ -40,7 +40,7 @@ public class Main {
         while(right <= count) {
             result = reverseWithPos(result, left, right);
             left = left + k;
-            right = left+k-1;
+            right = left + k - 1;
         }
         return result;
     }

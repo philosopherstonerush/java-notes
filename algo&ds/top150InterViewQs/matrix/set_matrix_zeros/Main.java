@@ -22,6 +22,7 @@ public class Main {
         int cols = matrix[0].length;
 
         for(int i = 0; i < rows; i++) {
+            // this cant be in the loop inside as this can be manipulated by the zeros we set with matrix[i][0] and matrix[0][j]
             if(matrix[i][0] == 0) col0 = 0;
             for (int j = 1; j < cols; j++) {
                 if(matrix[i][j] == 0) {
