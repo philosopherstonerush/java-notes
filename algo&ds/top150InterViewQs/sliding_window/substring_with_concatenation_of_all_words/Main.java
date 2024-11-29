@@ -3,8 +3,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        String s = "barfoothefoobarman";
-        String[] words = new String[]{"foo","bar"};
+        String s = "wordgoodgoodgoodbestword";
+        String[] words = new String[]{"word","good","best","good"};
 
         System.out.println(findSubstringBest(s, words).toString());
     }
@@ -111,6 +111,7 @@ public class Main {
                 }
                 while(currentFailures == 0 && left < right) {
                     int target = smapping[left];
+                    // we are just trying to find if the number has reduced
                     if(target != -1 && --table[1][target] == table[0][target] - 1) {
                         int length = right - left;
                         if((length / wordLen) == words.length) {

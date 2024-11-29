@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(mySqrt(8));
+        System.out.println(mySqrt(2147395599));
     }
 
     // use binary search to find the square root

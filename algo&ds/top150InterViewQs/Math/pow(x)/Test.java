@@ -6,8 +6,6 @@ public class Test {
 
     public static double myPow(double x, int n) {
 
-
-
     }
 
 }

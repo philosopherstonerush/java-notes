@@ -11,8 +11,4 @@ public class Test {
 
     }
 
-    public static int[] reverse(int[] nums, int start, int end) {
-
-    }
-
 }

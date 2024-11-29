@@ -8,8 +8,7 @@ public class Test {
     }
 
     public static int majorityElementBest(int[] nums) {
-        Arrays.sort(nums);
-        return nums[nums.length / 2];
+
     }
 
 }

@@ -66,6 +66,8 @@ public class basicCalc {
                 result = 0;
                 // default sign is +
                 sign = 1;
+
+                // why number not reset to 0? checkout readme
             } else if (c == ')') {
                 // finish evaluating the last expression.
                 result += sign * number;

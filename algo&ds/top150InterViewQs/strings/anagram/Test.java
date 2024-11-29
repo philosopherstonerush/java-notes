@@ -8,8 +8,6 @@ public class Test {
     }
 
     public static boolean isAnagram(String s, String t) {
-
-
     }
 
 }

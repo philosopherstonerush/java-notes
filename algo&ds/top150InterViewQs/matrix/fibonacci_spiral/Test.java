@@ -11,21 +11,6 @@ public class Test {
 
     public static void matrix(int m, int n) {
 
-
-
-    }
-
-    public static int getTerm(int term) {
-        if(term == 1) {
-            return first;
-        } else if (term == 2) {
-            return second;
-        } else {
-            int temp = second;
-            second = first + second;
-            first = temp;
-            return second;
-        }
     }
 
 

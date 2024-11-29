@@ -39,6 +39,17 @@ public class Main {
            }
         }
         return j;
+
+        // or simply
+        int i = 0;
+        for(int j = 1; j < nums.length; j++) {
+            if(nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        return i+1;
+
     }
 
     // Awful runtime - got this by making a few changes to the remove_element problem's alogrithm. The hint is in the problem name itself, ITS SORTED

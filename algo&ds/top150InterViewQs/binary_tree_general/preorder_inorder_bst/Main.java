@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Main {
 
     static public class TreeNode {
@@ -56,4 +58,32 @@ public class Main {
         return root;
     }
 
+    /*
+        If you prefer an answer that is similar to the postorder, inorder traversal question then
+     */
+
+    private static HashMap<Integer, Integer> map = new HashMap<>();
+
+    public static Test.TreeNode buildTreee(int[] preorder, int[] inorder) {
+
+        for(int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+
+        return buildTreeHelper(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+    }
+
+    public static Test.TreeNode buildTreeHelper(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
+        if(preStart > preEnd || inStart > inEnd) {
+            return null;
+        }
+
+        Test.TreeNode root = new Test.TreeNode(preorder[preStart]);
+        int index = map.get(root.val);
+
+        root.left = buildTreeHelper(preorder, preStart + 1, preStart + index - inStart, inorder, inStart, index);
+        root.right = buildTreeHelper(preorder, preStart + index - inStart + 1, preEnd, inorder, index + 1, inEnd);
+
+        return root;
+    }
 }

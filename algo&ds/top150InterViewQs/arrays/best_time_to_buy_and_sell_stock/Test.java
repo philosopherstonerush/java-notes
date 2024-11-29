@@ -7,7 +7,6 @@ public class Test {
 
     public static int maxBestProfit(int[] prices) {
 
-
     }
 
 }

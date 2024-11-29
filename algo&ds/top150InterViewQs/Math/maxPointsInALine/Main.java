@@ -76,7 +76,7 @@ public class Main {
                 local_max = Math.max(m.get(k), local_max);
             }
 
-            // local_max + overlap because if not this then slope will be zero then we cant account for the i's point's overlap. If j's points have an overlap, it doesnt matter as they will provide the same slope with i's points
+            // local_max + overlap because if not this then slope will be zero then we cant account for the i's point's overlap. If j's points have an overlap, it doesnt matter as they will provide the same slope with i's points, this cannot be added to y-axis as essentially it belongs to the slope.
 
             // vertical is a special case as well because then too we have the division of 0 problem.
 

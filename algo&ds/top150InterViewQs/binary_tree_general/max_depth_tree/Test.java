@@ -32,7 +32,11 @@ public class Test {
     }
 
     public static int maxDepth(TreeNode root) {
+    }
+
+    public static int depthHelper(TreeNode root, int currDepth) {
 
     }
+
 
 }

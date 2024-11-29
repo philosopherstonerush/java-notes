@@ -50,6 +50,8 @@ therefore => 1 0 1 => 5 which basically is 11 / 2
 
 ```
 
+In Java, the >>>= operator is the unsigned right shift assignment operator. It shifts the bits of a number to the right and fills the leftmost bits with zeros, regardless of whether the number is positive or negative (unlike >>, which preserves the sign bit for negative numbers). Then it assigns the result back to the variable.
+
 # Why x *= x
 
 You could use debug feature to see it slowly

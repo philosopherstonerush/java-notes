@@ -4,8 +4,8 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        String s = "barfoothefoobarman";
-        String[] words = new String[]{"foo","bar"};
+        String s = "wordgoodgoodgoodbestword";
+        String[] words = new String[]{"word","good","best","word"};
 
         System.out.println(findSubstring(s, words).toString());
     }

@@ -13,7 +13,7 @@ brilliant! cheers!
 public class Main {
 
     public static void main(String[] args) {
-        int[][] matrix = new int[][]{{1,1,1}, {1,0,1}, {1,1,1}};
+        int[][] matrix = new int[][]{{0,1,2,0}, {3,4,5,2}, {1,3,1,5}};
         setZeroes(matrix);
     }
     public static void setZeroes(int[][] matrix) {
