@@ -11,5 +11,6 @@ public class Test {
     }
 
     public static boolean canConstruct(String ransomNote, String magazine) {
+
     }
 }

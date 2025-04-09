@@ -31,21 +31,4 @@ public class Test {
 
     }
 
-    private static ArrayList<Integer> arr = new ArrayList<>();
-
-    public static int kthSmallest(TreeNode root, int k) {
-        kthSmallestHelper(root);
-        return arr.get(k-1);
-    }
-
-    public static void kthSmallestHelper(TreeNode root) {
-        if(root == null) {
-            return;
-        }
-
-        kthSmallestHelper(root.left);
-        arr.add(root.val);
-        kthSmallestHelper(root.right);
-    }
-
 }

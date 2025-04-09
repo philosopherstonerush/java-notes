@@ -6,8 +6,8 @@ public class Main {
     public static int second = 1;
 
     public static void main(String[] args) {
-        int m = 5;
-        int n = 5;
+        int m = 3;
+        int n = 4;
         int[][] finalMatrix = makeSpiralMatrix(m, n);
         for(int i = 0; i < m; i++) {
             System.out.println(Arrays.toString(finalMatrix[i]));

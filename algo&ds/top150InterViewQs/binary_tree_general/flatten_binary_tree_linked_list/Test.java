@@ -28,12 +28,12 @@ public class Test {
         n5.right = n6;
 
          flatten(n1);
-
     }
 
     private static TreeNode prev;
 
     public static void flatten(TreeNode root) {
+
     }
 
 }

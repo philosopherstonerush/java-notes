@@ -15,6 +15,7 @@ public class Test {
 
     public static int[][] merge(int[][] intervals) {
 
+
     }
 
 }

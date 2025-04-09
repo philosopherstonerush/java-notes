@@ -1,7 +1,7 @@
 public class Test {
 
     public static void main(String args[]) {
-        int[] test = new int[]{-14,-13,-20};
+        int[] test = new int[]{1,-1,1,-1};
 
         // -14
 

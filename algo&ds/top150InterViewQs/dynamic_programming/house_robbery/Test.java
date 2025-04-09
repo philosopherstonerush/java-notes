@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Test {
@@ -6,5 +7,8 @@ public class Test {
         System.out.println(rob(test));
     }
 
+    static int rob(int[] nums) {
+
+    }
 
 }

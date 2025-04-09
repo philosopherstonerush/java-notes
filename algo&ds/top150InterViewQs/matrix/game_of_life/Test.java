@@ -10,7 +10,6 @@ public class Test {
     public static void gameOfLife(int[][] board) {
 
 
-
         printPretty(board);
     }
 
@@ -20,11 +19,8 @@ public class Test {
 
 
     public static void printPretty(int[][] board) {
-
         for (int[] ints : board) {
             System.out.println(Arrays.toString(ints));
         }
-
     }
-
 }

@@ -7,6 +7,6 @@ public class Test {
     }
 
     public static int removeDuplicates(int[] nums) {
-    }
 
+    }
 }

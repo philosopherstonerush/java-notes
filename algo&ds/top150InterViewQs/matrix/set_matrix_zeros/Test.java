@@ -2,10 +2,13 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
-        int[][] matrix = new int[][]{{1,1,1}, {1,0,1}, {1,1,1}};
+        int[][] matrix = new int[][]{{1,0,3}};
         setZeroes(matrix);
     }
     public static void setZeroes(int[][] matrix) {
+
+
+        printPretty(matrix);
 
     }
 

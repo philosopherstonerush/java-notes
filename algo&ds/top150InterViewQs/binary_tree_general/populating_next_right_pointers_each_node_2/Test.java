@@ -39,41 +39,7 @@ public class Test {
     }
 
     public static Node connect(Node root) {
-
-
-        Node head = null;
-        Node prev = null;
-
-        Node temp = root;
-
-        while(temp != null) {
-            while(temp != null) {
-                if(temp.left != null) {
-                    if(prev != null) {
-                        prev.next = temp.left;
-                    } else {
-                        head = temp.left;
-                    }
-                    prev = temp.left;
-                }
-                if(temp.right != null) {
-                    if(prev != null) {
-                        prev.next = temp.right;
-                    } else {
-                        head = temp.right;
-                    }
-                    prev = temp.right;
-                }
-                temp = temp.next;
-            }
-
-            temp = head;
-            prev = null;
-            head = null;
-        }
-
-
-        return root;
+        return null;
     }
 
 }

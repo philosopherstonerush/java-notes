@@ -2,9 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Test {
-
     static Map<Integer, Integer> map = new HashMap<>();
-
 
     static public class TreeNode {
         int val;
@@ -33,6 +31,8 @@ public class Test {
 
     public static TreeNode buildTree(int[] inorder, int[] postorder) {
 
+
     }
+
 
 }

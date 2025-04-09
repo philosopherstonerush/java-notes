@@ -30,6 +30,45 @@ public class Main {
      *
      */
 
+    // Another solution similar to the leetcode solution after this - this might be easier to understand
+    public static int maxPoints2(int[][] points) {
+        int maxPoints = 0;
+
+        for(int i = 0; i < points.length; i++) {
+            int overlapping = 1;
+            int yaxis = 0;
+            Map<Double, Integer> slope = new HashMap<>();
+
+            int[] fpoint = points[i];
+
+            for(int j = i + 1; j < points.length; j++) {
+                if(fpoint[0] == points[j][0] && fpoint[1] == points[j][1]) {
+                    overlapping++;
+                }
+                else if (fpoint[0] == points[j][0]) {
+                    yaxis++;
+                } else {
+                    Double slop = (points[j][1] - fpoint[1]) / (double) (points[j][0] - fpoint[0]);
+                    if(slop == -0.0) {
+                        slop = 0.0;
+                    }
+                    slope.put(slop, slope.getOrDefault(slop, 0) + 1);
+                }
+            }
+
+            int maxSlopeLines = 0;
+
+            for(Map.Entry<Double, Integer> keySet: slope.entrySet()) {
+                maxSlopeLines = Math.max(maxSlopeLines, slope.get(keySet.getKey()));
+            }
+
+            maxPoints = Math.max(maxPoints, Math.max(maxSlopeLines, yaxis) + overlapping);
+
+        }
+
+        return maxPoints;
+    }
+
     public static int maxPoints(int[][] points) {
 
         // Maximum number of points that lay on the line

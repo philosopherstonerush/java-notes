@@ -7,6 +7,5 @@ public class Test {
 
     public static int trap(int[] height) {
         
-
     }
 }

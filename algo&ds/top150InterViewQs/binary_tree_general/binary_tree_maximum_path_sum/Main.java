@@ -17,60 +17,39 @@ public class Main {
       }
   }
 
-
+    // Convert to primitives
+    // https://leetcode.com/problems/binary-tree-maximum-path-sum/?envType=study-plan-v2&envId=top-interview-150
 
     public static void main(String[] args) {
-        var n1 = new TreeNode(-10);
-        var n2 = new TreeNode(9);
-        var n3 = new TreeNode(20);
-        var n4 = new TreeNode(15);
-        var n5 = new TreeNode(7);
+        var n1 = new TreeNode(0);
+        var n2 = new TreeNode(1);
+        var n3 = new TreeNode(1);
+//        var n4 = new TreeNode(15);
+//        var n5 = new TreeNode(7);
         n1.left = n2;
         n1.right = n3;
-        n3.left = n4;
-        n3.right = n5;
+//        n3.left = n4;
+//        n3.right = n5;
         System.out.println(maxPathSum(n1));
     }
 
-    private static HashMap<Integer, HashSet<Integer>> map = new HashMap<>();
-    public static int maxPathSum(TreeNode root) {
+    static int max_path = Integer.MAX_VALUE;
 
-        traverseInOrder(root);
-
-        return 0;
-
-    }
-
-    public static long computeBest(int val) {
-        HashSet<Integer> temp = map.get(val);
-        HashSet<Integer> alreadySeen = new HashSet<>();
-
-        int maxVal = Collections.max(temp);
-
-
-
-    }
-
-    public static void traverseInOrder(TreeNode root) {
-
+    public static int getMaxGain(TreeNode root) {
         if(root == null) {
-            return;
+            return 0;
         }
-        HashSet<Integer> adjList = map.getOrDefault(root.val, new HashSet<>());
-        if(root.left != null) {
-            adjList.add(root.left.val);
-        }
-        if (root.right != null) {
-            adjList.add(root.right.val);
-        }
-        map.put(root.val, adjList);
-        for(Integer elem: adjList) {
-            HashSet<Integer> temp = map.getOrDefault(elem, new HashSet<>());
-            temp.add(root.val);
-            map.put(elem, temp);
-        }
-        traverseInOrder(root.left);
-        traverseInOrder(root.right);
+        int gain_on_left = Math.max(getMaxGain(root.left), 0);
+        int gain_on_right = Math.max(getMaxGain(root.right), 0);
+
+        max_path = Math.max(root.val + gain_on_left + gain_on_right, max_path);
+
+        return root.val + Math.max(gain_on_left, gain_on_right);
+
     }
 
+    public static int maxPathSum(TreeNode root) {
+        getMaxGain(root);
+        return max_path;
+    }
 }

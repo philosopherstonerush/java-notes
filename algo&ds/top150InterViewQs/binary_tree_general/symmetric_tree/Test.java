@@ -1,5 +1,6 @@
 import com.sun.source.tree.Tree;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -48,14 +49,19 @@ public class Test {
     // recursive solution
 
     public static boolean isSymmetricHelp(Test.TreeNode left, Test.TreeNode right) {
-        
+        if (left.val != right.val) {
+            return false;
+        }
+        boolean leftSide = isSymmetricHelp(left.left, right.left);
+        boolean rightSide = isSymmetricHelp(left.right, right.right);
+
+        return leftSide && rightSide;
     }
 
 
     // stack based approach
 
     public static boolean isSymmetricButItsStack(TreeNode root) {
-
 
     }
 }

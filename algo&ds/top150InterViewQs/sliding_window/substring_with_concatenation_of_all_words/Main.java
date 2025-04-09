@@ -3,8 +3,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        String s = "wordgoodgoodgoodbestword";
-        String[] words = new String[]{"word","good","best","good"};
+        String s = "barfoothefoobarman";
+        String[] words = new String[]{"foo","bar"};
 
         System.out.println(findSubstringBest(s, words).toString());
     }

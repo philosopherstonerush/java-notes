@@ -8,5 +8,4 @@ public class Test {
     public static int removeElement(int[] nums, int val) {
 
     }
-
 }

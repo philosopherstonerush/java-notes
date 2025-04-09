@@ -10,7 +10,8 @@ public class Test {
     }
 
     public static int findMinArrowShots(int[][] points) {
-        
+
+
     }
 
 }

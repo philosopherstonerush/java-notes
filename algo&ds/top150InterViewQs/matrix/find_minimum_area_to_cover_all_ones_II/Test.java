@@ -4,11 +4,6 @@ public class Test {
         System.out.println(minimumSum(grid));
     }
 
-    public static int minimumSum(int[][] grid) {
-
-    }
-
-
 
 
 }

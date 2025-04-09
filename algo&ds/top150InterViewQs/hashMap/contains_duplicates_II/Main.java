@@ -25,4 +25,31 @@ public class Main {
         return false;
     }
 
+    /*
+        I just coded the thing below but I'm not sure how I got it right :O
+     */
+    public static boolean containsNearbyDuplicate2(int[] nums, int k) {
+        if(k == 0) return false;
+        Set<Integer> set = new HashSet<>();
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            if(set.size() == k) {
+                if(set.contains(num)) {
+                    return true;
+                } else {
+                    set.remove(nums[i-k]);
+                    set.add(num);
+                }
+            } else {
+                if(set.contains(num)) {
+                    return true;
+                } else {
+                    set.add(num);
+                }
+            }
+        }
+
+        return false;
+    }
+
 }
