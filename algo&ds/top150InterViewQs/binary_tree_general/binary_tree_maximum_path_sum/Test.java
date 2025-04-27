@@ -27,5 +27,5 @@ public class Test {
         System.out.println(t.maxPathSum(n1));
     }
 
-    
+
 }

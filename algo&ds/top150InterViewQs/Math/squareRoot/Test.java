@@ -5,26 +5,22 @@ public class Test {
 
     public static int mySqrt(int x) {
 
-        if(x == 0 || x == 1) {
-            return x;
-        }
-
-        int left = 0;
+        int left = 1;
         int right = x;
+        long mid = x;
 
-        while(left < right) {
-            int mid = left + ((right - left) / 2);
-            if((long) mid * mid == x) {
-                return mid;
-            } else if((long) mid * mid < x) {
-                left = mid + 1;
+        while(left <= right) {
+            mid = left + ((right - left) / 2);
+            if((long) (mid * mid) == (long) x) {
+                return (int) mid;
+            } else if((long) (mid * mid) < (long) x) {
+                left = (int) (mid + 1);
             } else {
-                right = mid - 1;
+                right = (int) (mid - 1);
             }
         }
 
         return right;
-
     }
 
 }
