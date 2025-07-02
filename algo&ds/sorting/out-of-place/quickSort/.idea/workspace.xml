@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bf53c4f-421a-4007-bf74-d9b7cb13490c" name="Changes" comment="" />
+    <list default="true" id="2bf53c4f-421a-4007-bf74-d9b7cb13490c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../inplace/heapSort/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../inplace/heapSort/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../inplace/quickSort/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/zig_zag_conversion/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/bubbleSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/bubbleSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/bubbleSort/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/bubbleSort/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/insertionSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/insertionSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/insertionSort/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/insertionSort/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/quickSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/quickSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/quickSort/out/production/quickSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/quickSort/out/production/quickSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/selectionSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/selectionSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../inplace/selectionSort/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../inplace/selectionSort/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mergeSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mergeSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mergeSort/out/production/mergeSort/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mergeSort/out/production/mergeSort/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mergeSort/out/production/mergeSort/readME.md" beforeDir="false" afterPath="$PROJECT_DIR$/../mergeSort/out/production/mergeSort/readME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/Math/squareRoot/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/Math/squareRoot/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/gas_station/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/gas_station/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/gas_station/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/gas_station/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/gas_station/out/production/gas_station/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/gas_station/out/production/gas_station/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/h_index/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/h_index/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/zig_zag_conversion/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/zig_zag_conversion/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/zig_zag_conversion/out/production/zig_zag_conversion/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/arrays/zig_zag_conversion/out/production/zig_zag_conversion/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/binary_search_tree_iterator/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/binary_search_tree_iterator/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/binary_tree_maximum_path_sum/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/binary_tree_maximum_path_sum/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/inorder_postorder_bst/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/inorder_postorder_bst/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/inorder_postorder_bst/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/inorder_postorder_bst/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/kth_smallest_element_bst/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/kth_smallest_element_bst/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/kth_smallest_element_bst/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/binary_tree_general/kth_smallest_element_bst/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../top150InterViewQs/sliding_window/substring_with_concatenation_of_all_words/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../top150InterViewQs/sliding_window/substring_with_concatenation_of_all_words/Test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,17 +51,24 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2UqgeJmpXTFCAMzgtZuuJGSEYFZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../inplace/quickSort" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/suvarna/Desktop/notes/java-notes/algo&ds/sorting/out-of-place/tim_sort"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />

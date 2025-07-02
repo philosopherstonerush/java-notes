@@ -11,7 +11,6 @@ public class Test {
 
     public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
 
-
     }
 
 }

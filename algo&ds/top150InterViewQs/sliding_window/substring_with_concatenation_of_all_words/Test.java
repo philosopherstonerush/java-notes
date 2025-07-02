@@ -4,8 +4,8 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        String s = "barfoothefoobarman";
-        String[] words = new String[]{"foo","bar"};
+        String s = "barfoofoobarthefoobarman";
+        String[] words = new String[]{"bar","foo","the"};
 
         System.out.println(findSubstring(s, words).toString());
     }
@@ -14,5 +14,4 @@ public class Test {
 
 
     }
-
 }

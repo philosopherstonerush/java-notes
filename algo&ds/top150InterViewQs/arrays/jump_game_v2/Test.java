@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class Test {
 
     public static void main(String args[]) {
-        int[] test = new int[]{7,0,9,6,9,6,1,7,9,0,1,2,9,0,3};
+        int[] test = new int[]{2,3,0,1,4};
         System.out.println(jump(test));
     }
 

@@ -1,6 +1,7 @@
 import com.sun.source.tree.Tree;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Main {
 
@@ -30,6 +31,40 @@ public class Main {
         System.out.println(kthSmallest(n1, 1));
 
     }
+
+    // Using the same algorithm as in binary_search_tree_iterator, we can recursively find the next smallest element.
+
+    static Stack<Test.TreeNode> stack = new Stack<>();
+
+    private static void fillStack(Test.TreeNode root) {
+        while(root != null) {
+            stack.add(root);
+            root = root.left;
+        }
+    }
+
+
+    public static int kthSmallest(Test.TreeNode root, int k) {
+
+        Test.TreeNode temp = root;
+        fillStack(root);
+
+        int i = 1;
+        while(true) {
+            temp = stack.pop();
+            if(i == k) {
+                return temp.val;
+            }
+            i++;
+            if(temp.right != null) {
+                fillStack(temp.right);
+            }
+        }
+    }
+
+
+
+    // Constructing an array will work but then its O(N) runtime and O(N) memory space
 
     public static int kthSmallest(TreeNode root, int k) {
         helper(root);

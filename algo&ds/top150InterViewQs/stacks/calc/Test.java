@@ -10,5 +10,4 @@ public class Test {
     public static int calculate(String s) {
 
     }
-
 }

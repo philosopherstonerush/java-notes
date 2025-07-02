@@ -7,6 +7,7 @@ public class Test {
     }
 
     public static int canCompleteCircuit(int[] gas, int[] cost) {
+
     }
 
 }

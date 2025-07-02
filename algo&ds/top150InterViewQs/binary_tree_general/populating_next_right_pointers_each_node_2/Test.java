@@ -39,7 +39,7 @@ public class Test {
     }
 
     public static Node connect(Node root) {
-        return null;
+
     }
 
 }

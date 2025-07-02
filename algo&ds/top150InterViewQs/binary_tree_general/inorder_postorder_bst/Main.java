@@ -103,6 +103,15 @@ public class Main {
 
         int inIndex = map.get(root.val);
 
+        /*
+
+        I spent a significant amount of time thinking why the specific value parameters are being sent.
+
+        inStart, inIndex -1 --> all the left children of the current node
+        poStart, poStart + inIndex - inStart - 1 --> all the left children to the left of current order is present by calculating how many nodes are to the left of the node in inorder and then adding it from the start of postorder. If you notice how elements are arranged in postorder, one can see that it goes from root and to the right most left node and then it travels to left. Similarly all the nodes to the right of the last left node on till poEnd - 1
+
+         */
+
         root.left = buildTreeHelper(inorder, inStart, inIndex -1, postorder, poStart, poStart + inIndex - inStart - 1);
 
         // poEnd -1 --> to prevent reaching the last root node again!

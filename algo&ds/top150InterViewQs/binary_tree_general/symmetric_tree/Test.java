@@ -49,13 +49,7 @@ public class Test {
     // recursive solution
 
     public static boolean isSymmetricHelp(Test.TreeNode left, Test.TreeNode right) {
-        if (left.val != right.val) {
-            return false;
-        }
-        boolean leftSide = isSymmetricHelp(left.left, right.left);
-        boolean rightSide = isSymmetricHelp(left.right, right.right);
 
-        return leftSide && rightSide;
     }
 
 

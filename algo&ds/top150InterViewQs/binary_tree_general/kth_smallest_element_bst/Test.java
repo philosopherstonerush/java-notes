@@ -1,6 +1,7 @@
 import com.sun.source.tree.Tree;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Test {
 
@@ -27,8 +28,11 @@ public class Test {
         n1.right = n3;
         n2.right = n4;
 
-        System.out.println(kthSmallest(n1, 1));
+        System.out.println(kthSmallest(n1, 3));
 
     }
+
+
+
 
 }

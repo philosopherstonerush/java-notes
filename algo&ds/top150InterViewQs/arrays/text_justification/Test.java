@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -10,6 +11,8 @@ public class Test {
         System.out.println(fullJustify(words, maxWidth).toString());
     }
 
-    
+    public static List<String> fullJustify(String[] words, int maxWidth) {
+
+    }
 
 }

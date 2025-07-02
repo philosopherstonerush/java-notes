@@ -23,34 +23,6 @@ public class Test {
         System.out.println(head);
     }
 
-    public static ListNode deleteDuplicates(ListNode head) {
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        ListNode before = dummy;
-        ListNode temp = before.next;
 
-        while(temp != null && temp.next != null) {
-            if(temp.val == temp.next.val) {
-                before.next = findUniqueNode(temp, temp.val);
-                temp = before.next;
-            }
-            else {
-                before = before.next;
-                temp = before.next;
-            }
-        }
-
-        return dummy.next;
-
-    }
-
-    public static ListNode findUniqueNode(ListNode head, int avoid) {
-        while(head != null && head.val == avoid) {
-            head = head.next;
-        }
-
-        return head;
-
-    }
     
 }

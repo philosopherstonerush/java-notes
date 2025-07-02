@@ -33,7 +33,6 @@ public class Test {
     private static TreeNode prev;
 
     public static void flatten(TreeNode root) {
-
     }
 
 }

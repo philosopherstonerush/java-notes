@@ -30,9 +30,10 @@ public class Test {
     }
 
     public static TreeNode buildTree(int[] inorder, int[] postorder) {
-
-
     }
 
+    public static TreeNode buildTreeHelper(int[] inorder, int inStart, int inEnd, int[] postorder, int poStart, int poEnd) {
+
+    }
 
 }

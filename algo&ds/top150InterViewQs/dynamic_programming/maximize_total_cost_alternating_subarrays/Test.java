@@ -1,7 +1,7 @@
 public class Test {
 
     public static void main(String args[]) {
-        int[] test = new int[]{1,-1,1,-1};
+        int[] test = new int[]{1,-2,3,4};
 
         // -14
 
@@ -11,7 +11,6 @@ public class Test {
         subResult = -1
 
         2nd iteration
-
 
          */
 

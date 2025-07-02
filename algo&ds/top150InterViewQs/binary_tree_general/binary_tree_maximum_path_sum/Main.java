@@ -33,7 +33,7 @@ public class Main {
         System.out.println(maxPathSum(n1));
     }
 
-    static int max_path = Integer.MAX_VALUE;
+    static int max_path = Integer.MIN_VALUE;
 
     public static int getMaxGain(TreeNode root) {
         if(root == null) {

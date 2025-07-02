@@ -12,6 +12,11 @@ public class Main {
 
     }
 
+    // this works even when we have unicode characters but we have to normalize the characters first.
+
+    // refer to markdown readme
+
+
     public static Boolean isAnagram(String test, String seq) {
 
         char[] testChar = test.toCharArray();
